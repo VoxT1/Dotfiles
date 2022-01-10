@@ -24,7 +24,7 @@
 * About This Config
 #+CAPTION: XMonad Scrot
 #+ATTR_HTML: :alt XMonad Scrot :title XMonad Scrot :align left 
-[[https://raw.githubusercontent.com/V0xl/VoxDots/main/Saturn.png]]
+[[https://raw.githubusercontent.com/VoxT1/voxDots/main/Saturn1.png]]
 
 Xmonad is a dynamically tiling X11 window manager that is written and configured in Haskell.
 - XMonad Official Website: [[https://xmonad.org][https://xmonad.org]]
