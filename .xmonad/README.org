@@ -1,7 +1,7 @@
-#+TITLE: Voxol's XMonad Config
+#+TITLE: Vox's XMonad Config
 #+PROPERTY: header-args :tangle xmonad.hs
 #+STARTUP: showeverything
-#+AUTHOR: Voxol
+#+AUTHOR: Vox
 # __     _______
 # \ \   / /_   _|  Vox Tetra
 #  \ \ / /  | |    https://www.github.com/VoxT1
@@ -26,7 +26,7 @@
 #+ATTR_HTML: :alt XMonad Scrot :title XMonad Scrot :align left 
 [[https://raw.githubusercontent.com/VoxT1/voxDots/main/.saturn1.png]]
 
-Xmonad is a dynamically tiling X11 window manager that is written and configured in Haskell.
+XMonad is a dynamically tiling X11 window manager that is written and configured in Haskell.
 - XMonad Official Website: [[https://xmonad.org][https://xmonad.org]]
 - Haskell Official Website: https://haskell.org
 
