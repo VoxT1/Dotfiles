@@ -8,7 +8,7 @@
 
 Yes, this is a dotfile repo, but there's a bit more than just that!
 
-[[https://raw.githubusercontent.com/V0xl/VoxDots/main/.saturn.png]]
+[[https://raw.githubusercontent.com/VoxT1/voxDots/main/.saturn1.png]]
 
 * What's Here? :toc:
 - [[#files-with-dots][Files With Dots]]
