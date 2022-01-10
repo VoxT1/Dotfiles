@@ -1,4 +1,5 @@
 # Add this to /etc/X11/xorg.conf
+# This will fix screen-tearing and make moving windows move smoother
 
 Section "Screen"
     Identifier     "Screen0"
