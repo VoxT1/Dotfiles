@@ -176,7 +176,7 @@ myStartupHook = do
 #+END_SRC
 
 * Gridselect
-GridSelect displays items (programs, open windows, etc.) in a 2D grid and lets the user selectfrom it with the cursor/hjkl keys or the mouse.
+GridSelect displays items (programs, open windows, etc.) in a 2D grid and lets the user select from it with the cursor/hjkl keys or the mouse. I personally do not use this functionality.
 
 #+BEGIN_SRC haskell
 myColorizer :: Window -> Bool -> X (String, String)
@@ -221,10 +221,7 @@ myAppGrid = [ ("Alacritty", "alacritty")
 #+END_SRC
 
 * Scratchpads
-Allows to have several floating scratchpads running different applications.  Import Util.NamedScratchpad and bind a key to namedScratchpadSpawnAction.  In the example below, I have created named scratchpads for:
-+ alacritty -- my terminal
-+ mocp -- a terminal music player
-+ qalculate-gtk -- a nice calculator
+Allows to have several floating scratchpads running different applications.  Import Util.NamedScratchpad and bind a key to namedScratchpadSpawnAction. I also do not use these.
 
 #+BEGIN_SRC haskell
 myScratchPads :: [NamedScratchpad]
