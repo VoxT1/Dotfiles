@@ -1,4 +1,4 @@
-#+TITLE: Voxol's Scripts
+#+TITLE: Vox's Scripts
 #+AUTHOR: Vox
 # __     _______
 # \ \   / /_   _|  Vox Tetra
