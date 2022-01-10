@@ -8,7 +8,11 @@
 *CW: There are NSFW wallpapers stored here and are prefixed with 'owo'.*
 
 These are my wallpapers, categorized as:
-- Space
-- Abstract
-- Furry
-- Nature
+** Space
+Anything to do with astrophotography or artistic interpretations of Space.
+** Abstract
+Abstract art, cool-looking geometric shapes, or artistic renderings.
+** Furry
+Art of anthropomorphic animals.
+** Nature
+Anything to do with the outdoors.
