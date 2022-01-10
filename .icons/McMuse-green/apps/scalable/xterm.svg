@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" version="1.1" viewBox="0 0 16.933 16.933" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient1159-3-2" x1="-184.75" x2="-170.2" y1="-1.2655" y2="-15.817" gradientTransform="translate(228.91 23.647)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#6d7982" offset="0"/>
+   <stop stop-color="#859094" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient7064-9" x1="-177.35" x2="-177.35" y1="-1.1773" y2="-15.837" gradientTransform="matrix(.88521 0 0 .77552 208.54 20.927)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#233937" offset="0"/>
+   <stop stop-color="#232b2d" offset=".48448"/>
+   <stop stop-color="#384140" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient7076-0" x1="-177.35" x2="-177.35" y1="-1.1773" y2="-15.837" gradientTransform="matrix(.86877 0 0 .050009 205.62 21.666)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#3b454b" offset="0"/>
+   <stop stop-color="#2c353a" offset="1"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-42.964 -6.6389)">
+  <rect x="44.154" y="7.8294" width="14.552" height="14.552" ry="1.2138" fill="url(#linearGradient1159-3-2)"/>
+  <rect x="44.99" y="8.6604" width="12.882" height="11.285" ry=".70721" fill="url(#linearGradient7064-9)" stroke="#232b2d" stroke-width=".52229"/>
+  <rect x="45.109" y="20.875" width="12.642" height=".72773" ry=".36386" fill="url(#linearGradient7076-0)"/>
+  <path d="m47.866 15.105h0.48606v-0.56952c0.56462-0.10801 0.86411-0.5057 0.86411-1.0409 0-1.0998-1.4925-1.0065-1.4925-1.6153 0-0.27003 0.16202-0.4075 0.45169-0.4075 0.25039 0 0.42714 0.1031 0.62844 0.28967l0.36332-0.41241c-0.21112-0.22585-0.46151-0.39769-0.81501-0.44678v-0.55971h-0.48606v0.56952c-0.51552 0.09819-0.83465 0.46642-0.83465 1.0016 0 1.0261 1.4925 0.96721 1.4925 1.63 0 0.27985-0.15711 0.43205-0.50079 0.43205-0.27985 0-0.54007-0.12274-0.8101-0.33386l-0.31913 0.48606c0.26021 0.23567 0.63826 0.38787 0.97212 0.42714z" fill="#6be54f" stroke-width=".12274"/>
+  <rect x="50.228" y="10.343" width="2.3812" height="4.7624" fill="#6be54f" opacity=".35"/>
+ </g>
+</svg>

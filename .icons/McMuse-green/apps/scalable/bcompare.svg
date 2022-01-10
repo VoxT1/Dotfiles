@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" version="1.1" viewBox="0 0 16.933 16.933" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <defs>
+  <linearGradient id="b-5" x1="9.2603" x2="9.2603" y1="-.26249" y2="15.612" gradientTransform="matrix(1 0 0 1 4.2049 -2.2889)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#1c1d1d" offset="0"/>
+   <stop stop-color="#313232" offset="1"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-4.9987 3.0805)">
+  <circle cx="13.465" cy="5.3862" r="7.9375" fill="url(#b-5)" stroke-width=".963" style="paint-order:stroke markers fill"/>
+  <g stroke-width=".22049">
+   <path d="m19.419 5.3861c0-3.298-2.6551-5.9531-5.9531-5.9531-0.5902 0-0.8731 0.68451-1.4106 0.84304-2.0128 0.59367-3.8619 1.6186-4.3681 3.6681-0.11396 0.4614-0.1744 0.94437-0.1744 1.442 0 3.298 2.6551 5.9531 5.9531 5.9531 0.30298 0 0.65266-0.5437 0.94325-0.58695 2.1866-0.32549 3.9254-1.3102 4.6559-3.332 0.22915-0.63415 0.35399-1.319 0.35399-2.0342z" fill="#464646"/>
+   <circle cx="13.466" cy="5.3861" r="3.4018" fill="#32c864"/>
+   <path d="m7.8663 0.70855a0.35883 0.35883 0 0 0-0.35365 0.35879v3.1096a0.35883 0.35883 0 0 0 0.35879 0.35879h3.1096a0.35883 0.35883 0 0 0 0.25368-0.61247l-3.1096-3.1096a0.35883 0.35883 0 0 0-0.25882-0.10512z" fill="#ff8200"/>
+   <path d="m19.065 10.063a0.35883 0.35883 0 0 0 0.35365-0.35879v-3.1096a0.35883 0.35883 0 0 0-0.35879-0.35879h-3.1096a0.35883 0.35883 0 0 0-0.25368 0.61247l3.1096 3.1096a0.35883 0.35883 0 0 0 0.25882 0.10512z" fill="#3278ff"/>
+   <circle cx="13.466" cy="5.3861" r="1.2757" fill="#f2f2f2"/>
+   <path d="m19.064 7.4154c-0.82978 2.2886-3.0231 3.9237-5.5983 3.9237v-2.5513c1.2836 0 2.4012-0.71096 2.9804-1.7606z" fill="#3278ff"/>
+   <path d="m13.466-0.56701c-2.321 0-4.3318 1.3282-5.3137 3.2662l2.1393 1.4614c0.49187-1.2732 1.7276-2.1763 3.1743-2.1763z" fill="#ff8200"/>
+  </g>
+ </g>
+</svg>
