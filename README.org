@@ -6,7 +6,7 @@
 #   \ V /   | |    https://www.twitter.com/VoxTetra1
 #    \_/    |_|    vt#9827
 
-Yes, this is a dotfile repo, but there's a bit more than just that!
+Yes, this is my dotfile repo, but there's a bit more than just that!
 
 [[https://raw.githubusercontent.com/VoxT1/voxDots/main/.saturn1.png]]
 
@@ -27,13 +27,13 @@ Yes, this is a dotfile repo, but there's a bit more than just that!
 * Window Managers
 Window Managers are a component of complete desktop environments that handle drawing the windows/frames on your screen in the X environment. It's possible, however, for window managers to be used on their own without the extra components of a desktop environment. They take a lot of configuring, since there is no "settings" app for most of them.
 As such, I will be hosting the config files for my current window manager as well as those I've used in the past :3
-** [[https://github.com/V0xl/VoxDots/tree/main/.xmonad][XMonad]]
+** [[https://github.com/VoxT1/voxDots/tree/main/.xmonad][XMonad]]
 XMonad is my current window manager of choice, and so far it's my favorite of the bunch :3 My config in particular was derived from [[https://gitlab.com/dwt1][Derek Taylor's]] (DistroTube's) config.
 ** Dwm
 Dwm was the first standalone window manager I ever used and configured. I'm not much a fan of its patching system, but it definitely gets the job done.
-** [[https://github.com/V0xl/VoxDots/tree/main/.config/herbstluftwm][Herbstluftwm]]
+** [[https://github.com/VoxT1/voxDots/tree/main/.config/herbstluftwm][Herbstluftwm]]
     Herbstluftwm is what I used between Bspwm and XMonad, didn't use it for very long but got pretty comfortable with it.
-** [[https://github.com/V0xl/VoxDots/tree/main/.config/bspwm][Bspwm]]
+** [[https://github.com/VoxT1/voxDots/tree/main/.config/bspwm][Bspwm]]
     Bspwm was my second window manager, and is still one of my favorites.
 * Gentoo
 [[https://www.gentoo.org/][Gentoo/Linux]] is a Linux distribution that requires a lot of configuration to really make it work, and having those files preconfigured and at the ready makes setting up new systems or reinstalling a breeze.
