@@ -1,4 +1,10 @@
 #!/bin/bash
+# __     _______
+# \ \   / /_   _|  Vox Tetra
+#  \ \ / /  | |    https://www.github.com/VoxT1
+#   \ V /   | |    https://www.twitter.com/VoxTetra1
+#    \_/    |_|    vt#9827
+#
 # This mounts the necessary file systems so you don't need to copy/paste or write out every single command
 
 echo "Mounting necessary filesystems..."
