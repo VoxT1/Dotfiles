@@ -1,6 +1,8 @@
 #!/bin/bash
+# This mounts the necessary file systems so you don't need to copy/paste or write out every single command
 
 echo "Mounting necessary filesystems..."
+
 mount --types proc /proc /mnt/gentoo/proc
 mount --rbind /sys /mnt/gentoo/sys
 mount --make-rslave /mnt/gentoo/sys
