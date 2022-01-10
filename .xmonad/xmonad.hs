@@ -272,6 +272,7 @@ myShowWNameTheme = def
 myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts floats
                $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
              where
+               {- Replace first line layout to set default; the rest will be cycled through. -}
                myDefaultLayout =     withBorder myBorderWidth tall
                                  ||| threeCol
                                  ||| spirals
