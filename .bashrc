@@ -8,12 +8,20 @@
 
 ### Run startx on login ###
 
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-startx
-fi
+#if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+#startx
+#fi
 
 ### Ignore capitalization for autocomplete ###
 bind "set completion-ignore-case on"
+
+### List dir every cd ###
+function cd {
+    builtin cd "$@"
+    RET=$?
+    clear && exa -lh --color=always --group-directories-first
+    return $RET
+}
 
 ### Archive Extraction ###
 ex ()
@@ -42,9 +50,10 @@ ex ()
 }
 
 
-### Appearance ###
+### Startup ###
 # neofetch
 # pfetch
+exa -lh --color=always --group-directories-first
 
 export PS1=" \w [$(date +%H:%M:%S)] > "
 export VISUAL=nvim
@@ -60,14 +69,14 @@ alias ds="doas su"
 #alias ss="sudo su"
 
 ## Bookmarks ##
+alias dcol="cd $HOME/College"
 alias dgit="cd $HOME/Git"
-alias dcode="cd $HOME/Git/voxCode"
-alias dnote="cd $HOME/Git/voxNotes"
 
 ## Shortcuts ##
-alias sx="startx"
+alias x="startx"
 alias q="exit"
 alias c="clear"
+alias to="cd"
 alias ..="cd .."
 alias h="cd $HOME"
 alias lsb="lsblk"
