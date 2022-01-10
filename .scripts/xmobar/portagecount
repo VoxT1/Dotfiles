@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "pkg: $(qlist -I | wc -l)"

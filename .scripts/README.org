@@ -1,0 +1,197 @@
+#+TITLE: Voxol's Scripts
+#+AUTHOR: Vox
+# __     _______
+# \ \   / /_   _|  Vox Tetra
+#  \ \ / /  | |    https://www.github.com/VoxT1
+#   \ V /   | |    https://www.twitter.com/VoxTetra1
+#    \_/    |_|    vt#9827
+
+My knowledge of scripting is pretty limited, and so far I've only done things in Bash, but this is my little place to store any silly things I decide to write!
+
+* Included Scripts :toc:
+- [[#dmenu][dmenu]]
+  - [[#dm-configs][dm-configs]]
+  - [[#dm-portage][dm-portage]]
+  - [[#dm-power][dm-power]]
+- [[#xmobar-scripts][Xmobar Scripts]]
+  - [[#clock][clock]]
+  - [[#kernel][kernel]]
+  - [[#memory][memory]]
+  - [[#portagecount][portagecount]]
+  - [[#upt][upt]]
+  - [[#volume][volume]]
+- [[#misc][Misc.]]
+  - [[#fsmountsh][fsmount.sh]]
+
+* dmenu
+/dmenu/ allows you to access run-menus with custom information, and in my case, I use it to run certain commands to access files or do certain actions.
+
+Each dmenu script is meant to share a main keybind, in this case /M1-s/, with various sub-keybinds for each specific script.
+** dm-configs
+/dm-configs/ is a script that allows the user to easily access any config file, both user and root-owned.
+#+BEGIN_SRC bash
+## Define TUI editor
+TERMEDIT="nvim"
+TERMROOTEDIT="doas nvim"
+
+## Define the array of options
+declare -a options=(
+"Alacritty - $HOME/.config/alacritty/alacritty.yml"
+"Bash - $HOME/.bashrc"
+"Bspwm - $HOME/.config/bspwm/bspwmrc"
+"Dunst - $HOME/.config/dunst/dunstrc"
+"DWM - /etc/portage/savedconfig/x11-wm/dwm-6.2.h"
+"Herbstluftwm - $HOME/.config/herbstluftwm/autostart"
+"Neofetch - $HOME/.config/neofetch/config.conf"
+"Picom - $HOME/.config/picom/picom.conf"
+"Polybar - $HOME/.config/polybar/config"
+"Sxhkd - $HOME/.config/sxhkd/sxhkdrc"
+"Vim - $HOME/.vimrc"
+"Xinitrc - $HOME/.xinitrc"
+"Xresources - $HOME/.Xresources"
+"Xmonad - $HOME/.xmonad/xmonad.hs"
+"Xmobar0 - $HOME/.config/xmobar/xmobarrc.hs"
+"Xmobar1 - $HOME/.config/xmobar/xmobarrc1.hs"
+"Quit"
+)
+
+## Pipe the array into dmenu
+choice=$(printf '%s\n' "${options[@]}" | dmenu -i -l 20 -p 'Edit config:')
+
+## What to do if we choose 'quit'
+#if [[ "$choice" == "quit" ]]; then
+#	echo "Program terminated." && exit 1
+#
+## What to do if we choose a config file
+if [ "$choice" ]; then
+	cfg=$(printf '%s\n' "${choice}" | awk '{print $NF}')
+
+	if [[ $(stat -c '%u' $cfg) == 0 ]]; then
+		# Run the config as root in Vim
+		$TERMROOTEDIT "$cfg"
+	else
+		# Run the config in Vim
+		$TERMEDIT "$cfg"
+	fi
+
+## What to do if we just escape without choosing anything
+else
+	echo "Program terminated." && exit 1
+fi
+#+END_SRC
+** dm-portage
+/dm-portage/ offers a selection of Portage-specific actions, including updating the @world set, cleaning unused dependencies, modifying the make.conf, etc.
+#+BEGIN_SRC bash
+## Define actions
+TERMEDIT="alacritty -e doas vim"
+PORTUPDATE="alacritty -e doas emerge -uvDN @world"
+PORTCLEAN="alacritty -e doas emerge --depclean"
+
+## Define the array of options
+declare -a options=(
+"Update @world"
+"Clean Dependencies"
+"make.conf - /etc/portage/make.conf"
+"package.accept_keywords - /etc/portage/package.accept_keywords"
+"grub - /etc/default/grub"
+)
+
+## Pipe the array into dmenu
+choice=$(printf '%s\n' "${options[@]}" | dmenu -i -l 20 -p 'Portage:')
+
+## What happens depending on the option selected
+if [[ "$choice" == "Update @world" ]]; then
+	$PORTUPDATE
+elif [ "$choice" == "Clean Dependencies" ]; then
+	$PORTCLEAN
+elif [ "$choice" ]; then
+	cfg=$(printf '%s\n' "${choice}" | awk '{print $NF}')
+	$TERMEDIT "$cfg"
+else
+	echo "Program terminated." && exit 1
+fi
+#+END_SRC
+** dm-power
+/dm-power/ is a simple power menu, including /poweroff/, /reboot/ and /logout/ options.
+#+BEGIN_SRC bash
+## Define actions
+POWEROFF="alacritty -e doas poweroff"
+REBOOT="alacritty -e doas reboot"
+LOGOUT="kill -9 -1"
+
+## Define the array
+declare -a options=(
+"Poweroff"
+"Reboot"
+"Log Out"
+)
+
+## Pipe array into dmenu
+choice=$(printf '%s\n' "${options[@]}" | dmenu -i -l 20 -p 'System will:')
+
+## User choices
+if [[ "$choice" == "Poweroff" ]]; then
+	$POWEROFF
+elif [ "$choice" == "Reboot" ]; then
+	$REBOOT
+elif [ "$choice" == "Log Out" ]; then
+	$LOGOUT
+else
+	echo "Program Terminated." && exit 1
+fi
+#+END_SRC
+
+* Xmobar Scripts
+** clock
+#+BEGIN_SRC bash
+#! /bin/bash
+dte="$(date +"%a, %B %d %l:%M%p"| sed 's/  / /g')"
+echo -e "$dte"
+#+END_SRC
+** kernel
+#+BEGIN_SRC bash
+#! /bin/bash
+kern="$(uname -r)"
+echo -e "$kern"
+#+END_SRC
+** memory
+#+BEGIN_SRC bash
+#! /bin/bash
+mem="$(free -h | awk '/^Mem:/ {print $3 "/" $2}')"
+echo -e "$mem RAM"
+#+END_SRC
+** portagecount
+#+BEGIN_SRC bash
+#!/bin/bash
+echo "pkg: $(qlist -I | wc -l)"
+#+END_SRC
+** upt
+#+BEGIN_SRC bash
+#! /bin/bash
+upt="$(uptime --pretty | sed -e 's/up //g' -e 's/ days/d/g' -e 's/ day/d/g' -e 's/ hours/h/g' -e 's/ hour/h/g' -e 's/ minutes/m/g' -e 's/, / /g')"
+echo -e "$upt"
+#+END_SRC
+** volume
+#+BEGIN_SRC bash
+#!/bin/bash
+vol="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
+echo "${vol}%"
+#+END_SRC
+
+* Misc.
+Any other small scripts I find I'll throw in here too.
+** fsmount.sh
+This script in particular is to mount necessary file systems before entering the Gentoo base system; its a lot of typing and/or copy-pasting, so why not automate it?
+#+begin_src bash
+#!/bin/bash
+echo "Mounting necessary filesystems..."
+mount --types proc /proc /mnt/gentoo/proc
+mount --rbind /sys /mnt/gentoo/sys
+mount --make-rslave /mnt/gentoo/sys
+mount --rbind /dev /mnt/gentoo/dev
+mount --make-rslave /mnt/gentoo/dev
+mount --bind /run /mnt/gentoo/run
+mount --make-slave /mnt/gentoo/run
+echo "Finished."
+read -p 'Hit enter to exit'
+#+end_src

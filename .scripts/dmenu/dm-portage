@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# __     _______
+# \ \   / /_   _|  Vox Tetra
+#  \ \ / /  | |    https://www.github.com/VoxT1
+#   \ V /   | |    https://www.twitter.com/VoxTetra1
+#    \_/    |_|    vt#9827
+#
+# Offers several Portage/Gentoo related actions.
+
+## Define actions
+TERMEDIT="alacritty -e doas vim"
+PORTUPDATE="alacritty -e doas emerge -uvDN @world"
+PORTCLEAN="alacritty -e doas emerge --depclean"
+
+## Define the array of options
+declare -a options=(
+"Update @world"
+"Clean Dependencies"
+"make.conf - /etc/portage/make.conf"
+"package.accept_keywords - /etc/portage/package.accept_keywords"
+"grub - /etc/default/grub"
+)
+
+## Pipe the array into dmenu
+choice=$(printf '%s\n' "${options[@]}" | dmenu -i -l 20 -p 'Portage:')
+
+## What happens depending on the option selected
+if [[ "$choice" == "Update @world" ]]; then
+	$PORTUPDATE
+elif [ "$choice" == "Clean Dependencies" ]; then
+	$PORTCLEAN
+elif [ "$choice" ]; then
+	cfg=$(printf '%s\n' "${choice}" | awk '{print $NF}')
+	$TERMEDIT "$cfg"
+else
+	echo "Program terminated." && exit 1
+fi

@@ -1,0 +1,11 @@
+#+TITLE: VoxGentoo
+#+AUTHOR: Vox
+# __     _______
+# \ \   / /_   _|  Vox Tetra
+#  \ \ / /  | |    https://www.github.com/VoxT1
+#   \ V /   | |    https://www.twitter.com/VoxTetra1
+#    \_/    |_|    vt#9827
+
+[[https://github.com/V0xl/VoxGentoo/blob/main/vg0welcome.png]]
+
+/voxGentoo/ is the name of the ideal script(s) that allow an interactive Gentoo base system installation, followed by a deployment of my personal configurations. We'll see if it ever becomes that ;p

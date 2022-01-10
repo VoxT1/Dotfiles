@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+# __     _______
+# \ \   / /_   _|  Vox Tetra
+#  \ \ / /  | |    https://www.github.com/VoxT1
+#   \ V /   | |    https://www.twitter.com/VoxTetra1
+#    \_/    |_|    vt#9827
+#
+# A script to list config files for easy access.
+
+## Define editor
+# Emacs as editor
+TERMEDIT="emacs"
+TERMROOTEDIT="doas emacs"
+# Neovim as TUI editor
+#TERMEDIT="nvim"
+#TERMROOTEDIT="doas nvim"
+
+## Define the array of options
+declare -a options=(
+"Alacritty - $HOME/.config/alacritty/alacritty.yml"
+"Bash - $HOME/.bashrc"
+"Bspwm - $HOME/.config/bspwm/bspwmrc"
+"Dunst - $HOME/.config/dunst/dunstrc"
+"DWM - /etc/portage/savedconfig/x11-wm/dwm-6.2.h"
+"Herbstluftwm - $HOME/.config/herbstluftwm/autostart"
+"Neofetch - $HOME/.config/neofetch/config.conf"
+"Picom - $HOME/.config/picom/picom.conf"
+"Polybar - $HOME/.config/polybar/config"
+"Sxhkd - $HOME/.config/sxhkd/sxhkdrc"
+"Vim - $HOME/.vimrc"
+"Xinitrc - $HOME/.xinitrc"
+"Xresources - $HOME/.Xresources"
+"Xmonad - $HOME/.xmonad/xmonad.hs"
+"Xmobar0 - $HOME/.config/xmobar/xmobarrc.hs"
+"Xmobar1 - $HOME/.config/xmobar/xmobarrc1.hs"
+"Quit"
+)
+
+## Pipe the array into dmenu
+choice=$(printf '%s\n' "${options[@]}" | dmenu -i -l 20 -p 'Edit config:')
+
+## What to do if we choose 'quit'
+#if [[ "$choice" == "quit" ]]; then
+#	echo "Program terminated." && exit 1
+#
+## What to do if we choose a config file
+if [ "$choice" ]; then
+	cfg=$(printf '%s\n' "${choice}" | awk '{print $NF}')
+	
+	if [[ $(stat -c '%u' $cfg) == 0 ]]; then
+		# Run the config as root in Vim
+		$TERMROOTEDIT "$cfg"
+	else
+		# Run the config in Vim
+		$TERMEDIT "$cfg"
+	fi
+
+## What to do if we just escape without choosing anything
+else
+	echo "Program terminated." && exit 1
+fi
