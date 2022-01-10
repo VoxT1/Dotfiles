@@ -1,0 +1,13 @@
+#+TITLE: Voxol's Wallpapers
+#+AUTHOR: Vox
+# __     _______
+# \ \   / /_   _|  Voxol Tetra
+#  \ \ / /  | |    https://www.github.com/VoxT1
+#   \ V /   | |    https://www.twitter.com/VoxTetra1
+#    \_/    |_|    vt#9827
+
+These are my wallpapers, categorized as:
+- Space
+- Abstract
+- Furry
+- Nature
