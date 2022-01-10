@@ -1,8 +1,10 @@
-#    __     _        _
-#   / _|___| |_ __ _| |__
-#  | |_/ __| __/ _` | '_ \
-#  |  _\__ \ || (_| | |_) |
-#  |_| |___/\__\__,_|_.__/
+# __     _______
+# \ \   / /_   _|  Vox Tetra
+#  \ \ / /  | |    https://www.github.com/VoxT1
+#   \ V /   | |    https://www.twitter.com/VoxTetra1
+#    \_/    |_|    vt#9827
+#
+# This is my fstab layout
 #
 ## UUID						Mountpoint		Type	Arguments					Checks 
 #
