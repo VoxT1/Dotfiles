@@ -1,7 +1,7 @@
-#+TITLE: Voxol's Wallpapers
+#+TITLE: Vox's Wallpapers
 #+AUTHOR: Vox
 # __     _______
-# \ \   / /_   _|  Voxol Tetra
+# \ \   / /_   _|  Vox Tetra
 #  \ \ / /  | |    https://www.github.com/VoxT1
 #   \ V /   | |    https://www.twitter.com/VoxTetra1
 #    \_/    |_|    vt#9827
