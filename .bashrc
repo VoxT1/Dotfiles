@@ -82,6 +82,7 @@ alias ..="cd .."
 alias h="cd $HOME"
 alias lsb="lsblk"
 alias bid="doas blkid"
+alias nfet="neofetch"
 alias iso="tree /media/hdd/ISOs/"
 
 alias ls='exa -ahl --color=always --group-directories-first'  # All files and dirs
