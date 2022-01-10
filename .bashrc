@@ -62,6 +62,7 @@ export EDITOR=nvim
 ### PATH ###
 export PATH="$HOME/.emacs.d/bin/":$PATH
 export PATH="$HOME/.local/bin/":$PATH
+export __GL_SHADER_DISK_CACHE_PATH=$XDG_CACHE_HOME
 
 ### Aliases ###
 ## Superuser ##
@@ -81,6 +82,7 @@ alias ..="cd .."
 alias h="cd $HOME"
 alias lsb="lsblk"
 alias bid="doas blkid"
+alias iso="tree /media/hdd/ISOs/"
 
 alias ls='exa -ahl --color=always --group-directories-first'  # All files and dirs
 alias la='exa -ahl --color=always --group-directories-first'  # All files and dirs
