@@ -1,0 +1,48 @@
+# __     _______
+# \ \   / /_   _|  Voxol Tetra
+#  \ \ / /  | |    https://www.github.com/VoxT1
+#   \ V /   | |    https://www.twitter.com/VoxTetra1
+#    \_/    |_|    vt#9827
+#
+# My Alacritty configuration.
+#
+## FONT ##
+font:
+  size: 12
+  normal:
+    # family: terminus 
+    # family: dina
+    # family: Hack
+    # family: Monofur
+    family: Mononoki
+    # family: joypixels
+    # family: fira code
+    # family: anonymous pro
+
+## OPACITY ##
+background_opacity: 0.75
+
+## CURSOR ##
+cursor:
+  style:
+    shape: Beam
+    blinking: Always
+
+## PADDING ##
+window:
+  padding:
+     x: 30 
+     y: 30
+
+## THEME ##
+import:
+ # - /home/voxol/.config/alacritty/dark.yml
+ # - /home/voxol/.config/alacritty/dracula.yml
+ - /home/voxol/.config/alacritty/doom-one.yml
+ # - /home/voxol/.config/alacritty/gruvbox.yml
+ 
+## ZOOM ##
+key_bindings:
+  - { key: Period,      mods: Control,       action: IncreaseFontSize            }
+  - { key: Comma,     mods: Control,       action: DecreaseFontSize            }
+      
