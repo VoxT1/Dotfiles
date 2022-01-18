@@ -8,7 +8,7 @@
 
 Yes, this is my dotfile repo, but there's a bit more than just that!
 
-[[https://raw.githubusercontent.com/VoxT1/voxDots/main/Pictures/Desktop/Gentoo/saturn2.png]]
+[[https://raw.githubusercontent.com/VoxT1/voxDots/main/Pictures/Desktops/Gentoo/saturn2.png]]
 
 * What's Here? :toc:
 - [[#files-with-dots][Files With Dots]]
