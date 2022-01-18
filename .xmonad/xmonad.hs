@@ -302,6 +302,7 @@ myManageHook = composeAll
      , className =? "splash"          --> doFloat
      , className =? "toolbar"         --> doFloat
      , className =? "Yad"             --> doCenterFloat
+     , className =? "MultiMC"       --> doCenterFloat
      --, title =? "Oracle VM VirtualBox Manager"  --> doCenterFloat
      , className =? "Deadbeef"                  --> doCenterFloat
      , className =? "Pavucontrol"               --> doCenterFloat
