@@ -15,8 +15,6 @@ Yes, this is my dotfile repo, but there's a bit more than just that!
   - [[#scripts][Scripts]]
   - [[#icons-and-themes][Icons and Themes]]
 
-[[https://github.com/VoxT1/voxDots/blob/main/Pictures/Desktops/Gentoo/saturn2.png]]
-
 ** Files With Dots
 "Dotfiles" are a type of file preceded by a '.' to indicate that they are hidden by default. They are located within the $HOME directory and are most commonly used to configure and personalize a Linux system. This repo is for convenience so I can access my configs at any point from any machine.
 
@@ -31,11 +29,10 @@ As such, I will be hosting the config files for my current window manager as wel
 XMonad is my current window manager of choice, and so far it's my favorite of the bunch :3 My config in particular was derived from [[https://gitlab.com/dwt1][Derek Taylor's]] (DistroTube's) config.
 *** Dwm
 Dwm was the first standalone window manager I ever used and configured. I'm not much a fan of its patching system, but it definitely gets the job done.
-*** [[https://github.com/VoxT1/voxDots/tree/main/.config/herbstluftwm][Herbstluftwm]]
-    Herbstluftwm is what I used between Bspwm and XMonad, didn't use it for very long but got pretty comfortable with it.
 *** [[https://github.com/VoxT1/voxDots/tree/main/.config/bspwm][Bspwm]]
     Bspwm was my second window manager, and is still one of my favorites.
-
+*** [[https://github.com/VoxT1/voxDots/tree/main/.config/herbstluftwm][Herbstluftwm]]
+    Herbstluftwm is what I used between Bspwm and XMonad, didn't use it for very long but got pretty comfortable with it.
 ** Scripts
 I'm absolutely a novice when it comes to scripting in Bash, but I've included some Very Small dmenu scripts that I enjoy, one of which is especially handy for managing so many config files ;3
 ** Icons and Themes
