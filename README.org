@@ -8,21 +8,23 @@
 
 Yes, this is my dotfile repo, but there's a bit more than just that!
 
-[[https://raw.githubusercontent.com/VoxT1/voxDots/main/Pictures/Desktops/Gentoo/saturn2.png]]
-
 * What's Here? :toc:
 - [[#files-with-dots][Files With Dots]]
+- [[#gentoo][Gentoo]]
 - [[#window-managers][Window Managers]]
   - [[#xmonad][XMonad]]
   - [[#dwm][Dwm]]
   - [[#herbstluftwm][Herbstluftwm]]
   - [[#bspwm][Bspwm]]
-- [[#gentoo][Gentoo]]
 - [[#scripts][Scripts]]
 - [[#icons-and-themes][Icons and Themes]]
 
 * Files With Dots
 "Dotfiles" are a type of file preceded by a '.' to indicate that they are hidden by default. They are located within the $HOME directory and are most commonly used to configure and personalize a Linux system. This repo is for convenience so I can access my configs at any point from any machine.
+
+* Gentoo
+[[https://www.gentoo.org/][Gentoo/Linux]] is a Linux distribution that requires a lot of configuration to really make it work, and having those files preconfigured and at the ready makes setting up new systems or reinstalling a breeze.
+This includes not only configuration for the package manager, but for the kernel itself, and keeping track of kernel configs can be very helpful! Portage (Gentoo's package manager) also records all packages manually installed by the user to a file called "world", which means that on a bare system, that file can be copied in and updating will result in all of those packages + their dependencies being pulled in.
 
 * Window Managers
 Window Managers are a component of complete desktop environments that handle drawing the windows/frames on your screen in the X environment. It's possible, however, for window managers to be used on their own without the extra components of a desktop environment. They take a lot of configuring, since there is no "settings" app for most of them.
@@ -35,9 +37,7 @@ Dwm was the first standalone window manager I ever used and configured. I'm not 
     Herbstluftwm is what I used between Bspwm and XMonad, didn't use it for very long but got pretty comfortable with it.
 ** [[https://github.com/VoxT1/voxDots/tree/main/.config/bspwm][Bspwm]]
     Bspwm was my second window manager, and is still one of my favorites.
-* Gentoo
-[[https://www.gentoo.org/][Gentoo/Linux]] is a Linux distribution that requires a lot of configuration to really make it work, and having those files preconfigured and at the ready makes setting up new systems or reinstalling a breeze.
-This includes not only configuration for the package manager, but for the kernel itself, and keeping track of kernel configs can be very helpful! Portage (Gentoo's package manager) also records all packages manually installed by the user to a file called "world", which means that on a bare system, that file can be copied in and updating will result in all of those packages + their dependencies being pulled in.
+
 * Scripts
 I'm absolutely a novice when it comes to scripting in Bash, but I've included some Very Small dmenu scripts that I enjoy, one of which is especially handy for managing so many config files ;3
 * Icons and Themes
