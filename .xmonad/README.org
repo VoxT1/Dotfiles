@@ -1,4 +1,4 @@
-#+TITLE: Vox's XMonad Config
+#+TITLE: .xmonad/
 #+PROPERTY: header-args :tangle xmonad.hs
 #+STARTUP: showeverything
 #+AUTHOR: Vox
