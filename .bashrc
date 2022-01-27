@@ -24,8 +24,7 @@ function cd {
 }
 
 ### Archive Extraction ###
-ex ()
-{
+ex (){
   if [ -f "$1" ] ; then
     case $1 in
       *.tar.bz2)   tar xjf $1   ;;
@@ -64,10 +63,13 @@ export PATH="$HOME/.emacs.d/bin/":$PATH
 export PATH="$HOME/.local/bin/":$PATH
 export __GL_SHADER_DISK_CACHE_PATH=$XDG_CACHE_HOME
 
+### Administration ###
+export SUPERUSER=doas
+#export SUPERUSER=sudo
+
 ### Aliases ###
 ## Superuser ##
-alias ds="doas su"
-#alias ss="sudo su"
+alias ss="$SUPERUSER su"
 
 ## Bookmarks ##
 alias dcol="cd $HOME/College"
@@ -79,18 +81,21 @@ alias q="exit"
 alias c="clear"
 alias to="cd"
 alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 alias h="cd $HOME"
+alias mkdir="mkdir -pv"
 alias lsb="lsblk"
-alias bid="doas blkid"
+alias bid="$SUPERUSER blkid"
 alias nfet="neofetch"
 alias iso="tree /media/hdd/ISOs/"
-
+# List #
 alias ls='exa -ahl --color=always --group-directories-first'  # All files and dirs
 alias la='exa -ahl --color=always --group-directories-first'  # All files and dirs
 alias ll='exa -lh --color=always --group-directories-first'   # Long format
 alias lt='exa -aT --color=always --group-directories-first'   # Tree listing
 alias l.='exa -a | egrep "^\."'                               # Lists dotfiles
-
+# Youtube Downloading #
 alias yta-aac="youtube-dl --extract-audio --audio-format aac"
 alias yta-best="youtube-dl --extract-audio --audio-format best"
 alias yta-flac="youtube-dl --extract-audio --audio-format flac"
@@ -102,10 +107,10 @@ alias ytv="youtube-dl -f bestvideo+bestaudio"
 alias vim="nvim"
 alias v="nvim"
 alias nv="nvim"
-alias dv="doas nvim"
-alias dnv="doas nvim"
+alias sv="$SUPERUSER nvim"
+alias snv="$SUPERUSER nvim"
 alias em="emacs"
-alias dem="doas emacs"
+alias sem="$SUPERUSER emacs"
 
 ## Confirmation Safety-net ##
 alias mv="mv -i"
@@ -121,23 +126,23 @@ alias fgrep='fgrep --color=auto'
 alias dots="/usr/bin/git --git-dir=$HOME/Git/voxDots --work-tree=$HOME"
 
 ## Portage ##
-alias emi="time doas emerge -v"                                     # Emerge
-alias emr="doas emerge -c"                                          # Depclean
-alias emS="doas emerge --sync"                                      # Sync
-alias ems="doas emerge -s"                                          # Search
-alias emu="time doas emerge -uv"                                    # Update single package
-alias emU="doas emerge --sync && time doas emerge -uvDN @world"     # Update @world
-alias emt="doas qlop -H"                                            # Show time that a package took to compile
+alias emi="time $SUPERUSER emerge -v"                                     # Emerge
+alias emr="$SUPERUSER emerge -c"                                          # Depclean
+alias emS="$SUPERUSER emerge --sync"                                      # Sync
+alias ems="$SUPERUSER emerge -s"                                          # Search
+alias emu="time $SUPERUSER emerge -uv"                                    # Update single package
+alias emU="$SUPERUSER emerge --sync && time doas emerge -uvDN @world"     # Update @world
+alias emt="$SUPERUSER qlop -H"                                            # Show time that a package took to compile
 alias pkg="qlist -I | wc -l"                                        # Package count
-alias news="doas eselect news read"                                 # Show news
+alias news="$SUPERUSER eselect news read"                                 # Show news
 # Repos/Overlays #
-alias repen="doas eselect repository enable"    # Enable repository
-alias repds="doas eselect repository disable"   # Disable repository
-alias reprm="doas eselect repository remove"    # Remove repository
+alias repen="$SUPERUSER eselect repository enable"    # Enable repository
+alias repds="$SUPERUSER eselect repository disable"   # Disable repository
+alias reprm="$SUPERUSER eselect repository remove"    # Remove repository
 # Kernel #
-alias ke="cd /usr/src/linux && doas make menuconfig"
-alias kb="cd /usr/src/linux && time doas make -j14 && doas make modules_install"
-alias gmk="doas grub-mkconfig -o /boot/grub/grub.cfg"
+alias ke="cd /usr/src/linux && $SUPERUSER make menuconfig"
+alias kb="cd /usr/src/linux && time $SUPERUSER make -j14 && $SUPERUSER make modules_install"
+alias gmk="$SUPERUSER grub-mkconfig -o /boot/grub/grub.cfg"
 
 ## Pacman ##
 #alias pmi="sudo pacman -S"
@@ -151,21 +156,21 @@ alias gmk="doas grub-mkconfig -o /boot/grub/grub.cfg"
 #alias pU="paru -Syuu"
 
 ## Services ##
-alias ruadd="doas rc-update add"
-alias rudel="doas rc-update del"
+alias ruadd="$SUPERUSER rc-update add"
+alias rudel="$SUPERUSER rc-update del"
 
 ## System Files ##
-alias mkc="doas $EDITOR /etc/portage/make.conf"
-alias pak="doas $EDITOR /etc/portage/package.accept_keywords"
-alias fst="doas $EDITOR /etc/fstab"
+alias mkc="$SUPERUSER $EDITOR /etc/portage/make.conf"
+alias pak="$SUPERUSER $EDITOR /etc/portage/package.accept_keywords"
+alias fst="$SUPERUSER $EDITOR /etc/fstab"
 
 ## User Configs ##
 alias brc="$EDITOR ~/.bashrc"
 alias xic="$EDITOR ~/.xinitrc"
 alias xrc="$EDITOR ~/.xmonad/xmonad.hs"
 alias xbrc="$EDITOR ~/.config/xmobar/xmobarrc.hs"
-alias dwme="doas $EDITOR /etc/portage/savedconfig/x11-wm/dwm-6.2.h"
-alias dwmb="doas emerge dwm"
+alias dwme="$SUPERUSER $EDITOR /etc/portage/savedconfig/x11-wm/dwm-6.2.h"
+alias dwmb="$SUPERUSER emerge dwm"
 alias hlc="$EDITOR ~/.config/herbstluftwm/autostart"
 alias bsc="$EDITOR ~/.config/bspwm/bspwmrc"
 alias sxc="$EDITOR ~/.config/sxhkd/sxhkdrc"
@@ -178,8 +183,8 @@ alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/mas
 
 ## Power Shortcuts ##
 alias log="kill -9 -1"
-alias reboot="doas reboot"
-alias poweroff="doas poweroff"
+alias reboot="$SUPERUSER reboot"
+alias poweroff="$SUPERUSER poweroff"
 
 ### Starship Prompt ###
 eval "$(starship init bash)"
