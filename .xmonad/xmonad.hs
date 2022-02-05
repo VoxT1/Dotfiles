@@ -86,11 +86,11 @@ myTerminal = "alacritty"
 
 {- Sets the default web browser -}
 myBrowser :: String
-myBrowser = "librewolf"
+myBrowser = "chromium"
 
 {- Sets default file manager -}
 myFileManager :: String
-myFileManager = "pcmanfm"
+myFileManager = "nemo"
 
 {- Makes Emacs keybinds easier to type -}
 myEmacs :: String
@@ -108,20 +108,20 @@ myBorderWidth = 2
 myNormColor :: String
 --myNormColor   = "#282c34"     -- Dracula
 myNormColor     = "#2D4952"   -- Doom One
+--myNormColor     = "#74434A"   -- Red
 
 {- Focused border color -}
 myFocusColor :: String
 --myFocusColor = "#C691E9"      -- Dracula
 myFocusColor = "#7EA6F8"      -- Doom One
+--myFocusColor = "#FF5D73"      -- Red
 
 windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
 
 myStartupHook :: X ()
 myStartupHook = do
-    spawnOnce "xrandr --output DP-2 --mode 2560x1440 --rate 165 --pos 440x0 --output DP-0 --mode 3440x1440 --rate 144 --pos 0x1440 &" -- Xrandr (Ultrawide on Bottom)
-    --spawnOnce "xrandr --output DP-0 --mode 3440x1440 --rate 144 &" -- Xrandr (Ultrawide only)
-    --spawnOnce "xrandr --output DP-0 --mode 2560x1440 --rate 165 --pos 440x1440 --output DP-2 --mode 3440x1440 --rate 144 --pos 0x0 &" -- Xrandr (Ultrawide on Top)
+    spawnOnce "xrandr --output DP-0 --mode 3440x1440 --rate 144 &" -- Xrandr (Ultrawide only)
     spawnOnce "picom --experimental-backend &"          -- Compositor
     spawnOnce "clipmenud &"                             -- Clipboard manager
     spawnOnce "dunst &"                                 -- Notification daemon
@@ -273,9 +273,9 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
                $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
              where
                {- Replace first line layout to set default; the rest will be cycled through. -}
-               myDefaultLayout =     withBorder myBorderWidth tall
+               myDefaultLayout =     withBorder myBorderWidth spirals
                                  ||| threeCol
-                                 ||| spirals
+                                 ||| tall
                                  ||| grid
                                  ||| noBorders monocle
                                  ||| floats
@@ -448,8 +448,8 @@ main :: IO ()
 main = do
     {- Launching xmobar on each monitor -}
     xmproc0 <- spawnPipe "xmobar -x 0 /home/vox/.config/xmobar/xmobarrc"
-    xmproc1 <- spawnPipe "xmobar -x 1 /home/vox/.config/xmobar/xmobarrc1"
-    -- xmproc2 <- spawnPipe "xmobar -x 2 /home/vox/.config/xmobar/xmobarrc"
+    --xmproc1 <- spawnPipe "xmobar -x 1 /home/vox/.config/xmobar/xmobarrc1"
+    --xmproc2 <- spawnPipe "xmobar -x 2 /home/vox/.config/xmobar/xmobarrc"
 
     {- The xmonad, ya know...what the WM is named after! -}
     xmonad $ ewmh def
@@ -471,7 +471,7 @@ main = do
         , logHook = dynamicLogWithPP $ namedScratchpadFilterOutWorkspacePP $ xmobarPP
               -- the following variables beginning with 'pp' are settings for xmobar.
               { ppOutput = \x -> hPutStrLn xmproc0 x                          -- xmobar on monitor 1
-                              >> hPutStrLn xmproc1 x                          -- xmobar on monitor 2
+--                              >> hPutStrLn xmproc1 x                          -- xmobar on monitor 2
 --                              >> hPutStrLn xmproc2 x                           xmobar on monitor 3
               , ppCurrent = xmobarColor "#c792ea" "" . wrap "<box type=Bottom width=2 mb=2 color=#c792ea>" "</box>"         -- Current workspace
               , ppVisible = xmobarColor "#c792ea" "" . clickable              -- Visible but not current workspace
