@@ -37,8 +37,8 @@ window:
 ## THEME ##
 import:
  # - /home/voxol/.config/alacritty/dark.yml
- # - /home/voxol/.config/alacritty/dracula.yml
- - /home/voxol/.config/alacritty/doom-one.yml
+ #- /home/voxol/.config/alacritty/dracula.yml
+- /home/voxol/.config/alacritty/doom-one.yml
  # - /home/voxol/.config/alacritty/gruvbox.yml
  
 ## ZOOM ##
