@@ -128,7 +128,7 @@ myStartupHook = do
     spawnOnce "/usr/bin/emacs --daemon &"               -- Emacs daemon for the emacsclient
     spawnOnce "nitrogen --restore &"                    -- Sets wallpaper
     spawnOnce "xsetroot -cursor_name left_ptr"          -- Fixes cursor
-    spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x282c34 --height 30 &"
+    spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x282c34 --height 26 &"
     spawnOnce "nm-applet &"                             -- Network Manager applet
     setWMName "Xmonad"
 
@@ -273,8 +273,8 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
                $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
              where
                {- Replace first line layout to set default; the rest will be cycled through. -}
-               myDefaultLayout =     withBorder myBorderWidth spirals
-                                 ||| threeCol
+               myDefaultLayout =     withBorder myBorderWidth threeCol 
+                                 ||| spirals 
                                  ||| tall
                                  ||| grid
                                  ||| noBorders monocle
@@ -307,6 +307,7 @@ myManageHook = composeAll
      , className =? "Deadbeef"                  --> doCenterFloat
      , className =? "Pavucontrol"               --> doCenterFloat
      , className =? "Leafpad"                   --> doCenterFloat
+     , className =? "Gedit"			--> doCenterFloat
      , title =? "Image Viewer"                  --> doCenterFloat
      , title =? "galculator"                    --> doCenterFloat
      , title =? "Sign in to Minecraft"          --> doCenterFloat
