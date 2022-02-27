@@ -248,6 +248,7 @@ threeCol = renamed [Replace "threeCol"]
            $ windowNavigation
            $ subLayout [] (smartBorders Simplest)
            $ limitWindows 7
+           $ mySpacing 8
            $ ThreeCol 1 (3/100) (1/2)
 threeRow = renamed [Replace "threeRow"]
            $ smartBorders
