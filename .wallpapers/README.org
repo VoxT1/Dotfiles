@@ -1,10 +1,10 @@
 #+TITLE: .wallpapers/
 #+AUTHOR: Vox
-# __     _______
-# \ \   / /_   _|  Vox Tetra
-#  \ \ / /  | |    https://www.github.com/VoxT1
-#   \ V /   | |    https://www.twitter.com/VoxTetra1
-#    \_/    |_|    vt#9827
+#  _   ___     __
+# | \ | \ \   / /  Noctivox
+# |  \| |\ \ / /   https://www.github.com/VoxT1
+# | |\  | \ V /    https://www.twitter.com/VoxNoctivox
+# |_| \_|  \_/     vt#9827
 
 *CW: There are NSFW wallpapers stored here and are prefixed with 'owo'.*
 
