@@ -1,10 +1,10 @@
 #+TITLE: Vox's Scripts
 #+AUTHOR: Vox
-# __     _______
-# \ \   / /_   _|  Vox Tetra
-#  \ \ / /  | |    https://www.github.com/VoxT1
-#   \ V /   | |    https://www.twitter.com/VoxTetra1
-#    \_/    |_|    vt#9827
+#  _   ___     __
+# | \ | \ \   / /  Noctivox
+# |  \| |\ \ / /   https://www.github.com/VoxT1
+# | |\  | \ V /    https://www.twitter.com/VoxNoctivox
+# |_| \_|  \_/     vt#9827
 
 My knowledge of scripting is pretty limited, and so far I've only done things in Bash, but this is my little place to store any silly things I decide to write!
 
