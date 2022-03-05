@@ -1,9 +1,9 @@
 #+TITLE: .gentoo/
 #+AUTHOR: Vox
-# __     _______
-# \ \   / /_   _|  Vox Tetra
-#  \ \ / /  | |    https://www.github.com/VoxT1
-#   \ V /   | |    https://www.twitter.com/VoxTetra1
-#    \_/    |_|    vt#9827
+#  _   ___     __
+# | \ | \ \   / /  Noctivox
+# |  \| |\ \ / /   https://www.github.com/VoxT1
+# | |\  | \ V /    https://www.twitter.com/VoxNoctivox
+# |_| \_|  \_/     vt#9827
 
 While this directory is primarily for system files that pertain specifically to the Gentoo distribution (make.conf and package.accept_keywords), there are other files that can be useful on other distributions (such as my fix for screen-tearing with Nvidia.)
