@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-# __     _______
-# \ \   / /_   _|  Vox Tetra
-#  \ \ / /  | |	   https://www.github.com/VoxT1
-#   \ V /   | |    https://www.twitter.com/VoxTetra1
-#    \_/    |_|    vt#9827
+#  _   ___     __
+# | \ | \ \   / /  Noctivox
+# |  \| |\ \ / /   https://www.github.com/VoxT1
+# | |\  | \ V /    https://www.twitter.com/VoxNoctivox
+# |_| \_|  \_/     vt#9827
 #
 # My Bspwm configuration.
 #
 ### AUTOSTART ###
 sxhkd &
 picom --experimental-backend &
-#$HOME/.config/polybar/launch.sh
+$HOME/.config/polybar/launch.sh
 nitrogen --restore &
 clipmenud &
 
@@ -35,7 +35,7 @@ fi
 
 ## workspaces ##
 bspc monitor DP-0 -d 1 2 3 4 5 6 7 8
-bspc monitor DP-2 -d 1 2 3 4 5 6 7 8
+#bspc monitor DP-2 -d 1 2 3 4 5 6 7 8
 
 ### COLORS ###
 ## GRUVBOX ##
