@@ -1,52 +1,51 @@
-;; __     _______
-;; \ \   / /_   _|  Vox Tetra
-;;  \ \ / /  | |    https://www.github.com/VoxT1
-;;   \ V /   | |    https://www.twitter.com/VoxTetra1
-;;    \_/    |_|    vt#9827
-;;
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-;; Place your private configuration here! Remember, you do not need to run 'doom sync' after modifying this file!
+;;  _   ___     __
+;; | \ | \ \   / /  Noctivox
+;; |  \| |\ \ / /   https://www.github.com/VoxT1
+;; | |\  | \ V /    https://www.twitter.com/VoxNoctivox
+;; |_| \_|  \_/     vt#9827
+;;
+;; My DOOM Emacs config
+
+;;(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+(setq initial-frame-alist '((center . 1) (width . 200) (height . 50)))
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "Vox"
+(setq user-full-name "Noctivox"
       user-mail-address "voxol.tetra@protonmail.com")
 
-;; Fix Org error
-(defun native-comp-available-p () nil)
-
-;; Set cool background
-(setq fancy-splash-image "~/.config/doom/bh.png")
-
-;; Set fonts
-(setq doom-font (font-spec :family "Mononoki" :size 20)
-      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 15)
-      doom-big-font (font-spec :family "Mononoki Nerd Font" :size 24))
-
-;; Add file icons to DirEd
-(add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
-
+;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
+;; are the three important ones:
+;;
+;; + `doom-font'
+;; + `doom-variable-pitch-font'
+;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
+;;   presentations or streaming.
+;;
+;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
+;; font string. You generally only need these two:
+(setq doom-font (font-spec :family "mononoki" :size 17 :weight 'semi-light)
+       doom-variable-pitch-font (font-spec :family "Ubuntu Mono" :size 14))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-one)
 
+(beacon-mode 1)
+
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
-
 (after! org
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-  (setq org-directory "~/Org/"
-        org-agenda-files '("~/Org/agenda.org")
+  (setq org-directory "~/nc/Org/"
+        org-agenda-files '("~/nc/Org/agenda.org")
         org-default-notes-file (expand-file-name "notes.org" org-directory)
         org-ellipsis " ▼ "
+        org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆")
+        org-superstar-item-bullet-alist '((?+ . ?➤) (?- . ?✦)) ; changes +/- symbols in item lists
         org-log-done 'time
-        org-journal-dir "~/Org/journal/"
-        org-journal-date-format "%B %d, %Y (%A) "
-        org-journal-file-format "%Y-%m-%d.org"
         org-hide-emphasis-markers t
         ;; ex. of org-link-abbrev-alist in action
         ;; [[arch-wiki:Name_of_Page][Description]]
@@ -67,17 +66,29 @@
              "DONE(d)"           ; Task has been completed
              "CANCELLED(c)" )))) ; Task has been cancelled
 
+(custom-set-faces
+  '(org-level-1 ((t (:inherit outline-1 :height 1.1))))
+  '(org-level-2 ((t (:inherit outline-2 :height 1.0))))
+  '(org-level-3 ((t (:inherit outline-3 :height 1.0))))
+  '(org-level-4 ((t (:inherit outline-4 :height 1.0))))
+  '(org-level-5 ((t (:inherit outline-5 :height 1.0))))
+)
+
+;; Set icons in dired
+;;(add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+
+;; With dired-open plugin, you can launch external programs for certain extensions
+;; For example, I set all .png files to open in 'sxiv' and all .mp4 files to open in 'mpv'
+(setq dired-open-extensions '(("gif" . "sxiv")
+                              ("jpg" . "sxiv")
+                              ("png" . "sxiv")
+                              ("mkv" . "mpv")
+                              ("mp4" . "mpv")))
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
-(custom-set-faces
-  '(org-level-1 ((t (:inherit outline-1 :height 1.2))))
-  '(org-level-2 ((t (:inherit outline-2 :height 1.1))))
-  '(org-level-3 ((t (:inherit outline-3 :height 1.1))))
-  '(org-level-4 ((t (:inherit outline-4 :height 1.1))))
-  '(org-level-5 ((t (:inherit outline-5 :height 1.0))))
-)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
