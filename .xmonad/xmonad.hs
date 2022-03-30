@@ -121,14 +121,17 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 
 myStartupHook :: X ()
 myStartupHook = do
-    spawnOnce "xrandr --output DP-0 --mode 3440x1440 --rate 144 &" -- Xrandr (Ultrawide only)
+    --spawnOnce "xrandr --output DP-0 --mode 3440x1440 --rate 144 &" -- Xrandr (3440x1440 DP)
+    --spawnOnce "xrandr --output HDMI-0 --mode 1920x1080 --rate 60 &" -- Xrandr (1080p HDMI
+    spawnOnce "xrandr --output DP-0 --mode 3440x1440 --rate 144 --pos 0x1440 --output DP-2 --mode 3440x1440 --rate 144 --pos 1700x0&"
+    --spawnOnce "xrandr --output DP-0 --mode 3440x1440 --rate 144 --pos 1440x720 --output DP-2 --mode 3440x1440 --rate 144 --rotate right --pos 0x0 &"
     spawnOnce "picom --experimental-backend &"          -- Compositor
     spawnOnce "clipmenud &"                             -- Clipboard manager
     spawnOnce "dunst &"                                 -- Notification daemon
     spawnOnce "/usr/bin/emacs --daemon &"               -- Emacs daemon for the emacsclient
     spawnOnce "nitrogen --restore &"                    -- Sets wallpaper
     spawnOnce "xsetroot -cursor_name left_ptr"          -- Fixes cursor
-    spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x282c34 --height 26 &"
+--    spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x282c34 --height 24 &"
     spawnOnce "nm-applet &"                             -- Network Manager applet
     setWMName "Xmonad"
 
@@ -263,7 +266,7 @@ threeRow = renamed [Replace "threeRow"]
 {- Theme for showWName which prints current workspace when you change workspaces. -}
 myShowWNameTheme :: SWNConfig
 myShowWNameTheme = def
-    { swn_font              = "xft:Mononoki:bold:size=50"
+    { swn_font              = "xft:mononoki:bold:size=50"
     , swn_fade              = 1.0
     , swn_bgcolor           = "#1c1f24"
     , swn_color             = "#ffffff"
@@ -450,7 +453,7 @@ main :: IO ()
 main = do
     {- Launching xmobar on each monitor -}
     xmproc0 <- spawnPipe "xmobar -x 0 /home/vox/.config/xmobar/xmobarrc"
-    --xmproc1 <- spawnPipe "xmobar -x 1 /home/vox/.config/xmobar/xmobarrc1"
+    xmproc1 <- spawnPipe "xmobar -x 1 /home/vox/.config/xmobar/xmobarrc1"
     --xmproc2 <- spawnPipe "xmobar -x 2 /home/vox/.config/xmobar/xmobarrc"
 
     {- The xmonad, ya know...what the WM is named after! -}
@@ -473,7 +476,7 @@ main = do
         , logHook = dynamicLogWithPP $ namedScratchpadFilterOutWorkspacePP $ xmobarPP
               -- the following variables beginning with 'pp' are settings for xmobar.
               { ppOutput = \x -> hPutStrLn xmproc0 x                          -- xmobar on monitor 1
---                              >> hPutStrLn xmproc1 x                          -- xmobar on monitor 2
+                              >> hPutStrLn xmproc1 x                          -- xmobar on monitor 2
 --                              >> hPutStrLn xmproc2 x                           xmobar on monitor 3
               , ppCurrent = xmobarColor "#c792ea" "" . wrap "<box type=Bottom width=2 mb=2 color=#c792ea>" "</box>"         -- Current workspace
               , ppVisible = xmobarColor "#c792ea" "" . clickable              -- Visible but not current workspace
