@@ -32,7 +32,7 @@ Config { font            = "xft:Terminus:weight=bold:pixelsize=12:antialias=true
                         -- Ram used number and percent
                     , Run Memory ["-t", "mem: <used>M (<usedratio>%)"] 20
                         -- Disk space free
-                    , Run DiskU [("/home", "hdd: <free> free")] [] 60
+                    , Run DiskU [("/home", "home: <free> free")] [] 60
                         -- Echos an "up arrow" icon in front of the uptime output.
                     , Run Com "echo" ["<fn=2>\xf0aa</fn>"] "uparrow" 3600
                         -- Uptime
