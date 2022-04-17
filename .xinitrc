@@ -1,9 +1,9 @@
 #!/bin/sh
-# __     _______
-# \ \   / /_   _|  Vox Tetra
-#  \ \ / /  | |    https://www.github.com/VoxT1
-#   \ V /   | |    https://www.twitter.com/VoxTetra1
-#    \_/    |_|    vt#9827
+#  _   ___     __
+# | \ | \ \   / /  Noctivox
+# |  \| |\ \ / /   https://www.github.com/VoxT1
+# | |\  | \ V /    https://www.twitter.com/VoxNoctivox
+# |_| \_|  \_/     nv#9827
 #
 # My .xinitrc configuration
 
@@ -66,11 +66,6 @@ xrdb ~/.Xresources &
 #exec dbus-launch --sh-syntax --exit-with-session bspwm
 
 ## XMONAD ##
-#if [[ $(xrandr -q | grep 'DP-2 connected') ]]; then
-#	xrandr --output DP-2 --mode 2560x1440 --rate 165 --pos 440x0 --output DP-0 --mode 3440x1440 --rate 144 --pos 0x1440 &
-#else
-#	xrandr --output DP-0 --mode 3440x1440 --rate 144 &
-#fi
 exec xmonad
 
 ## XFCE ##
