@@ -1,12 +1,12 @@
-# __     _______
-# \ \   / /_   _|  Vox Tetra
-#  \ \ / /  | |    https://www.github.com/VoxT1
-#   \ V /   | |    https://www.twitter.com/VoxTetra1
-#    \_/    |_|    vt#9827
+#  _   ___     __
+# | \ | \ \   / /  Noctivox
+# |  \| |\ \ / /   https://www.github.com/VoxT1
+# | |\  | \ V /    https://www.twitter.com/VoxNoctivox
+# |_| \_|  \_/     nv#9827
 #
 # My .bashrc configuration, feel free to harvest some aliases.
 
-### Run startx on login ###
+### Run startx on TTY login ###
 
 #if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 #startx
@@ -50,7 +50,7 @@ ex (){
 
 
 ### Startup ###
-# neofetch
+neofetch
 # pfetch
 exa -lh --color=always --group-directories-first
 
@@ -128,10 +128,12 @@ alias dots="/usr/bin/git --git-dir=$HOME/Git/voxDots --work-tree=$HOME"
 ## Portage ##
 alias emi="time $SUPERUSER emerge -v"                                     # Emerge
 alias emr="$SUPERUSER emerge -c"                                          # Depclean
+alias emd="$SUPERUSER emerge --deselect"				  # Deselect from @world
 alias emS="$SUPERUSER emerge --sync"                                      # Sync
 alias ems="$SUPERUSER emerge -s"                                          # Search
 alias emu="time $SUPERUSER emerge -uv"                                    # Update single package
 alias emU="$SUPERUSER emerge --sync && time doas emerge -uvDN @world"     # Update @world
+alias emmod="$SUPERUSER emerge @module-rebuild"				  # Rebuild modules
 alias emt="$SUPERUSER qlop -H"                                            # Show time that a package took to compile
 alias pkg="qlist -I | wc -l"                                        # Package count
 alias news="$SUPERUSER eselect news read"                                 # Show news
@@ -169,8 +171,8 @@ alias brc="$EDITOR ~/.bashrc"
 alias xic="$EDITOR ~/.xinitrc"
 alias xrc="$EDITOR ~/.xmonad/xmonad.hs"
 alias xbrc="$EDITOR ~/.config/xmobar/xmobarrc.hs"
-alias dwme="$SUPERUSER $EDITOR /etc/portage/savedconfig/x11-wm/dwm-6.2.h"
-alias dwmb="$SUPERUSER emerge dwm"
+#alias dwme="$SUPERUSER $EDITOR /etc/portage/savedconfig/x11-wm/dwm-6.2.h"
+#alias dwmb="$SUPERUSER emerge dwm"
 alias hlc="$EDITOR ~/.config/herbstluftwm/autostart"
 alias bsc="$EDITOR ~/.config/bspwm/bspwmrc"
 alias sxc="$EDITOR ~/.config/sxhkd/sxhkdrc"
