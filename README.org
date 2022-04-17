@@ -4,7 +4,7 @@
 # | \ | \ \   / /  Noctivox
 # |  \| |\ \ / /   https://www.github.com/VoxT1
 # | |\  | \ V /    https://www.twitter.com/VoxNoctivox
-# |_| \_|  \_/     vt#9827
+# |_| \_|  \_/     nv#9827
                 
 Yes, this is my dotfile repo, but there's a bit more than just that!
 
