@@ -1,8 +1,8 @@
--- __     _______
--- \ \   / /_   _|  Voxol Tetra
---  \ \ / /  | |    https://www.github.com/VoxT1
---   \ V /   | |    https://www.twitter.com/VoxTetra1
---    \_/    |_|    vt#9827
+--  _   ___     __
+-- | \ | \ \   / /  Noctivox
+-- |  \| |\ \ / /   https://www.github.com/VoxT1
+-- | |\  | \ V /    https://www.twitter.com/VoxNoctivox
+-- |_| \_|  \_/     nv#9827
 --
 -- My XMonad configuration, derived from Derek Taylor (DistroTube).
 --
@@ -86,7 +86,7 @@ myTerminal = "alacritty"
 
 {- Sets the default web browser -}
 myBrowser :: String
-myBrowser = "chromium"
+myBrowser = "brave-bin"
 
 {- Sets default file manager -}
 myFileManager :: String
@@ -106,14 +106,14 @@ myBorderWidth = 2
 
 {- Normal border color -}
 myNormColor :: String
---myNormColor   = "#282c34"     -- Dracula
-myNormColor     = "#2D4952"   -- Doom One
+myNormColor   = "#282c34"     -- Dracula
+--myNormColor     = "#2D4952"   -- Doom One
 --myNormColor     = "#74434A"   -- Red
 
 {- Focused border color -}
 myFocusColor :: String
---myFocusColor = "#C691E9"      -- Dracula
-myFocusColor = "#7EA6F8"      -- Doom One
+myFocusColor = "#C691E9"      -- Dracula
+--myFocusColor = "#7EA6F8"      -- Doom One
 --myFocusColor = "#FF5D73"      -- Red
 
 windowCount :: X (Maybe String)
@@ -123,15 +123,18 @@ myStartupHook :: X ()
 myStartupHook = do
     --spawnOnce "xrandr --output DP-0 --mode 3440x1440 --rate 144 &" -- Xrandr (3440x1440 DP)
     --spawnOnce "xrandr --output HDMI-0 --mode 1920x1080 --rate 60 &" -- Xrandr (1080p HDMI
-    spawnOnce "xrandr --output DP-0 --mode 3440x1440 --rate 144 --pos 0x1440 --output DP-2 --mode 3440x1440 --rate 144 --pos 1700x0&"
+    spawnOnce "xrandr --output DisplayPort-0 --mode 3440x1440 --rate 144 --pos 0x1440 --output DisplayPort-1 --mode 3440x1440 --rate 144 --pos 1700x0&"
     --spawnOnce "xrandr --output DP-0 --mode 3440x1440 --rate 144 --pos 1440x720 --output DP-2 --mode 3440x1440 --rate 144 --rotate right --pos 0x0 &"
     spawnOnce "picom --experimental-backend &"          -- Compositor
     spawnOnce "clipmenud &"                             -- Clipboard manager
     spawnOnce "dunst &"                                 -- Notification daemon
+    spawnOnce "/usr/bin/gentoo-pipewire-launcher &"     -- Pipewire
     spawnOnce "/usr/bin/emacs --daemon &"               -- Emacs daemon for the emacsclient
     spawnOnce "nitrogen --restore &"                    -- Sets wallpaper
     spawnOnce "xsetroot -cursor_name left_ptr"          -- Fixes cursor
---    spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x282c34 --height 24 &"
+    --spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x282c34 --height 24 &"    --Doom One
+    --spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0xE7E7E7 --height 24 &"    --Light
+    spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x13131F --height 24 &"      --Dark
     spawnOnce "nm-applet &"                             -- Network Manager applet
     setWMName "Xmonad"
 
@@ -311,8 +314,11 @@ myManageHook = composeAll
      , className =? "Deadbeef"                  --> doCenterFloat
      , className =? "Pavucontrol"               --> doCenterFloat
      , className =? "Leafpad"                   --> doCenterFloat
-     , className =? "Gedit"			--> doCenterFloat
+     , className =? "Gedit"                     --> doCenterFloat
+     , className =? "Nemo"                      --> doCenterFloat
      , title =? "Image Viewer"                  --> doCenterFloat
+     , title =? "Virtual Machine Manager"	--> doCenterFloat
+     , title =? "Nitrogen"                      --> doCenterFloat
      , title =? "galculator"                    --> doCenterFloat
      , title =? "Sign in to Minecraft"          --> doCenterFloat
      , title =? "Minecraft Launcher"            --> doCenterFloat
@@ -349,7 +355,7 @@ myKeys =
         , ("M1-S-q", killAll)                           -- Kill all windows on current workspace
 
         {- Dmenu Things -}
-        , ("M1-<Space> <Return>", spawn "dmenu_run -p 'Execute:'")      -- Dmenu
+        , ("M-<Return>", spawn "dmenu_run -p 'Execute:'")      -- Dmenu
         , ("M1-<Space> v", spawn "clipmenu")                            -- Clipmenu
         , ("M1-<Space> c", spawn "$HOME/.scripts/dmenu/dm-configs")     -- Edit config files
         , ("M1-<Space> p", spawn "$HOME/.scripts/dmenu/dm-portage")     -- Run portage actions
@@ -361,12 +367,13 @@ myKeys =
         , ("M1-S-b", spawn "firefox-bin")               -- Firefox
         , ("M1-h", spawn (myFileManager))               -- File Manager
         , ("M1-d", spawn ("discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy --no-sandbox"))
+        , ("M1-c", spawn ("galculator"))
         , ("<Print>", spawn ("flameshot gui"))
 
         {- Writing -}
         , ("M1-w e", spawn ("emacs"))
         , ("M1-w l", spawn ("leafpad"))
-        , ("M1-w o", spawn ("lowriter"))
+        , ("M1-w o", spawn ("libreoffice"))
         , ("M1-w v", spawn ("vscode"))
 
         {- Games -}
@@ -378,6 +385,10 @@ myKeys =
         , ("M1-m d", spawn ("deadbeef"))
         , ("M1-m p", spawn ("pavucontrol"))
         , ("M1-m m", spawn ("musescore"))
+
+        {- Virtualization -}
+        , ("M1-v v", spawn ("virt-manager"))
+	, ("M1-v b", spawn ("virtualbox"))
 
         {- Workspaces --}
         --, ("M-.", nextScreen)  -- Switch focus to next monitor
@@ -409,7 +420,7 @@ myKeys =
         --, ("M-C-S-t", windows W.swapUp)     -- Swap focused window with prev window
 
         , ("M-C-m", windows W.focusMaster)      -- Move focus to the master window
-        , ("M-<Return>", windows W.swapMaster)     -- Swap the focused window and the master window
+        , ("M-S-<Return>", windows W.swapMaster)     -- Swap the focused window and the master window
         , ("M-<Backspace>", promote)            -- Moves focused window to master, others maintain order
         , ("M-S-<Tab>", rotSlavesDown)          -- Rotate all windows except master and keep focus in place
         , ("M-C-<Tab>", rotAllDown)             -- Rotate all the windows in the current stack
