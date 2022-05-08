@@ -9,8 +9,18 @@ Config { font            = "xft:Mononoki:weight=bold:pixelsize=14:antialias=true
                            , "xft:Font Awesome 5 Free Solid:pixelsize=12"
                            , "xft:Font Awesome 5 Brands:pixelsize=12"
                            ]
-       , bgColor      = "#282c34"
-       , fgColor      = "#ff6c6b"
+       --, bgColor      = "#282c34"	--Doom One
+       --, fgColor      = "#ff6c6b"	--Doom One
+
+       , bgColor      = "#13131F"	--Black
+       , fgColor      = "#ff6c6b"	--Black
+
+       --,bgColor = "#212121"		--Red
+       --,fgColor = "#F44336"		--Red
+       
+	   --,bgColor = "#E7E7E7"       --Red Light
+	   --,fgColor = "#E53935"       --Red Light
+
        -- Position TopSize and BottomSize take 3 arguments:
        --   an alignment parameter (L/R/C) for Left, Right or Center.
        --   an integer for the percentage width, so 100 would be 100%.
@@ -54,5 +64,5 @@ Config { font            = "xft:Mononoki:weight=bold:pixelsize=14:antialias=true
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " <icon=haskell_20.xpm/>   <fc=#666666>|</fc> %UnsafeStdinReader% }{ <box type=Bottom width=2 mb=2 color=#51afef><fc=#51afef>  <action=`alacritty -e htop`>%kernel%</action> </fc></box>    <box type=Bottom width=2 mb=2 color=#ecbe7b><fc=#ecbe7b><action=`alacritty -e htop`>%cpu%</action></fc></box>    <box type=Bottom width=2 mb=2 color=#ff6c6b><fc=#ff6c6b><action=`alacritty -e htop`>%memory%</action></fc></box>    <box type=Bottom width=2 mb=2 color=#a9a1e1><fc=#a9a1e1><action=`alacritty -e htop`>%disku%</action></fc></box>    <box type=Bottom width=2 mb=2 color=#98be65><fc=#98be65>  <action=`alacritty -e htop`>%uptime%</action></fc></box>    <box type=Bottom width=2 mb=2 color=#c678dd><fc=#c678dd>  <action=`alacritty -e sudo pacman -Syu`>%portagecount%</action></fc></box>    <box type=Bottom width=2 mb=2 color=#46d9ff><fc=#46d9ff>%date%</fc></box>"
+       , template = " <icon=haskell_20.xpm/> <fc=#666666>|</fc> %UnsafeStdinReader% }{ <box type=Bottom width=2 mb=2 color=#04548B><fc=#04548B>  <action=`alacritty -e htop`>%kernel%</action> </fc></box>    <box type=Bottom width=2 mb=2 color=#905500><fc=#905500><action=`alacritty -e htop`>%cpu%</action></fc></box>    <box type=Bottom width=2 mb=2 color=#B61B1A><fc=#B61B1A><action=`alacritty -e htop`>%memory%</action></fc></box>    <box type=Bottom width=2 mb=2 color=#392E81><fc=#392E81><action=`alacritty -e htop`>%disku%</action></fc></box>    <box type=Bottom width=2 mb=2 color=#4B8400><fc=#4B8400>  <action=`alacritty -e htop`>%uptime%</action></fc></box>    <box type=Bottom width=2 mb=2 color=#6B2181><fc=#6B2181>  <action=`alacritty -e sudo pacman -Syu`>%portagecount%</action></fc></box>    <box type=Bottom width=2 mb=2 color=#02728E><fc=#02728E>%date%</fc></box>"
        }

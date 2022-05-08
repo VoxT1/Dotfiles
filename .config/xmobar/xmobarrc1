@@ -9,8 +9,18 @@ Config { font            = "xft:Mononoki:weight=bold:pixelsize=14:antialias=true
                            , "xft:Font Awesome 5 Free Solid:pixelsize=12"
                            , "xft:Font Awesome 5 Brands:pixelsize=12"
                            ]
-       , bgColor      = "#282c34"
-       , fgColor      = "#ff6c6b"
+       --, bgColor      = "#282c34"	--Doom One
+       --, fgColor      = "#ff6c6b"	--Doom One
+
+       , bgColor      = "#13131F"	--Black
+       , fgColor      = "#ff6c6b"	--Black
+
+       --,bgColor = "#212121"		--Red
+       --,fgColor = "#F44336"		--Red
+       
+	   --,bgColor = "#E7E7E7"       --Red Light
+	   --,fgColor = "#E53935"       --Red Light
+
        -- Position TopSize and BottomSize take 3 arguments:
        --   an alignment parameter (L/R/C) for Left, Right or Center.
        --   an integer for the percentage width, so 100 would be 100%.
@@ -54,5 +64,5 @@ Config { font            = "xft:Mononoki:weight=bold:pixelsize=14:antialias=true
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "<fc=#666666>|</fc> %UnsafeStdinReader% }{ <box type=Bottom width=2 mb=2 color=#46d9ff><fc=#46d9ff>%date%</fc></box> %trayerpad%"
+       , template = "<fc=#666666>|</fc> %UnsafeStdinReader% }{ <box type=Bottom width=2 mb=2 color=#02728E><fc=#02728E>%date%</fc></box> %trayerpad%"
        }
