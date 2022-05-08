@@ -45,6 +45,7 @@ fi
 
 ## MOUSE SIZE/THEME ##
 xrdb ~/.Xresources &
+xset m 3/4 
 
 ## DWM ##
 #if [[ $(xrandr -q | grep 'DP-2 connected') ]]; then
@@ -66,7 +67,14 @@ xrdb ~/.Xresources &
 #exec dbus-launch --sh-syntax --exit-with-session bspwm
 
 ## XMONAD ##
-exec xmonad
+exec dbus-launch --sh-syntax --exit-with-session xmonad
+
+## GNOME ##
+# Fix Missing Applications in GNOME #
+#export XDG_MENU_PREFIX=gnome-
+# Pipewire #
+#/usr/bin/gentoo-pipewire-launcher &
+#exec gnome-shell
 
 ## XFCE ##
 #picom --experimental-backend &
