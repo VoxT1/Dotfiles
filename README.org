@@ -8,12 +8,15 @@
                 
 Yes, this is my dotfile repo, but there's a bit more than just that!
 
+
 ** What's Here? :toc:
   - [[#files-with-dots][Files With Dots]]
   - [[#gentoo][Gentoo]]
   - [[#window-managers][Window Managers]]
   - [[#scripts][Scripts]]
   - [[#icons-and-themes][Icons and Themes]]
+
+[[https://github.com/VoxT1/voxDots/blob/main/Pictures/Desktops/Gentoo/Schr%C3%B6dinger3.png]]
 
 ** Files With Dots
 "Dotfiles" are a type of file preceded by a '.' to indicate that they are hidden by default. They are located within the $HOME directory and are most commonly used to configure and personalize a Linux system. This repo is for convenience so I can access my configs at any point from any machine.
