@@ -1,8 +1,8 @@
-# __     _______
-# \ \   / /_   _|  Vox Tetra
-#  \ \ / /  | |    https://www.github.com/VoxT1
-#   \ V /   | |    https://www.twitter.com/VoxTetra1
-#    \_/    |_|    vt#9827
+#  _   ___     __
+# | \ | \ \   / /  Noctivox
+# |  \| |\ \ / /   https://www.github.com/VoxT1
+# | |\  | \ V /    https://www.twitter.com/VoxNoctivox
+# |_| \_|  \_/     nv#9827
 #
 # Add this to /etc/X11/xorg.conf
 # This will fix screen-tearing and make moving windows move smoother

@@ -1,9 +1,9 @@
 #!/bin/sh
-# __     _______
-# \ \   / /_   _|  Vox Tetra
-#  \ \ / /  | |    https://www.github.com/VoxT1
-#   \ V /   | |    https://www.twitter.com/VoxTetra1
-#    \_/    |_|    vt#9827
+#  _   ___     __
+# | \ | \ \   / /  Noctivox
+# |  \| |\ \ / /   https://www.github.com/VoxT1
+# | |\  | \ V /    https://www.twitter.com/VoxNoctivox
+# |_| \_|  \_/     nv#9827
 #
 # A script to be placed in /etc/profile.d/ primarily to source the user's .bashrc file.
 

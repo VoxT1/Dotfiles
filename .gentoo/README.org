@@ -4,6 +4,6 @@
 # | \ | \ \   / /  Noctivox
 # |  \| |\ \ / /   https://www.github.com/VoxT1
 # | |\  | \ V /    https://www.twitter.com/VoxNoctivox
-# |_| \_|  \_/     vt#9827
+# |_| \_|  \_/     nv#9827
 
-While this directory is primarily for system files that pertain specifically to the Gentoo distribution (make.conf and package.accept_keywords), there are other files that can be useful on other distributions (such as my fix for screen-tearing with Nvidia.)
+While this directory is primarily for system files that pertain specifically to the Gentoo distribution (make.conf and package.accept_keywords), there are other files that can be useful on other distributions (such as my fix for screen-tearing with Nvidia and/or AMD.)
