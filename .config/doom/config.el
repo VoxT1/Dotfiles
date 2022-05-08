@@ -1,10 +1,9 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
-
 ;;  _   ___     __
 ;; | \ | \ \   / /  Noctivox
 ;; |  \| |\ \ / /   https://www.github.com/VoxT1
 ;; | |\  | \ V /    https://www.twitter.com/VoxNoctivox
-;; |_| \_|  \_/     vt#9827
+;; |_| \_|  \_/     nv#9827
 ;;
 ;; My DOOM Emacs config
 
@@ -32,9 +31,33 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+
+;;(setq doom-theme 'doom-acario-light)
+;;(setq doom-theme 'doom-material)
+(setq doom-theme 'doom-moonlight)
+;;(setq doom-theme 'doom-nord-light)
 
 (beacon-mode 1)
+
+(use-package dashboard
+  :init      ;; tweak dashboard config before loading it
+  (setq dashboard-set-heading-icons t)
+  (setq dashboard-set-file-icons t)
+  ;;(setq dashboard-startup-banner 'logo) ;; use standard emacs logo as banner
+  (setq dashboard-startup-banner "~/.config/doom/blackhole.png")  ;; use custom image as banner
+  (setq dashboard-center-content t) ;; set to 't' for centered content
+  (setq dashboard-items '((recents . 5)
+                          (agenda . 5 )
+                          (bookmarks . 5)
+                          (projects . 5)
+                          (registers . 5)))
+  :config
+  (dashboard-setup-startup-hook)
+  (dashboard-modify-heading-icons '((recents . "file-text")
+                                    (bookmarks . "book"))))
+
+(setq doom-fallback-buffer "*dashboard*")
+
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
