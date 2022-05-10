@@ -5,15 +5,15 @@
 -- |_| \_|  \_/     nv#9827
 --
 -- My XMonad configuration, derived from Derek Taylor (DistroTube).
---
--- Base
+
+{- Base -}
 import XMonad
 import System.Directory
 import System.IO (hPutStrLn)
 import System.Exit (exitSuccess)
 import qualified XMonad.StackSet as W
 
--- Actions
+{- Actions -}
 import XMonad.Actions.CopyWindow (kill1)
 import XMonad.Actions.CycleWS (Direction1D(..), moveTo, shiftTo, WSType(..), nextScreen, prevScreen)
 import XMonad.Actions.GridSelect
@@ -24,7 +24,7 @@ import XMonad.Actions.WindowGo (runOrRaise)
 import XMonad.Actions.WithAll (sinkAll, killAll)
 import qualified XMonad.Actions.Search as S
 
--- Data
+{- Data -}
 import Data.Char (isSpace, toUpper)
 import Data.Maybe (fromJust)
 import Data.Monoid
@@ -32,7 +32,7 @@ import Data.Maybe (isJust)
 import Data.Tree
 import qualified Data.Map as M
 
--- Hooks
+{- Hooks -}
 import XMonad.Hooks.DynamicLog (dynamicLogWithPP, wrap, xmobarPP, xmobarColor, shorten, PP(..))
 import XMonad.Hooks.EwmhDesktops  -- for some fullscreen events, also for xcomposite in obs.
 import XMonad.Hooks.ManageDocks (avoidStruts, docksEventHook, manageDocks, ToggleStruts(..))
@@ -41,14 +41,14 @@ import XMonad.Hooks.ServerMode
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.WorkspaceHistory
 
--- Layouts
+{- Layouts -}
 import XMonad.Layout.GridVariants (Grid(Grid))
 import XMonad.Layout.SimplestFloat
 import XMonad.Layout.Spiral
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.ThreeColumns
 
--- Layouts modifiers
+{- Layout Modifiers -}
 import XMonad.Layout.LayoutModifier
 import XMonad.Layout.LimitWindows (limitWindows, increaseLimit, decreaseLimit)
 import XMonad.Layout.Magnifier
@@ -65,7 +65,7 @@ import XMonad.Layout.WindowNavigation
 import qualified XMonad.Layout.ToggleLayouts as T (toggleLayouts, ToggleLayout(Toggle))
 import qualified XMonad.Layout.MultiToggle as MT (Toggle(..))
 
--- Utilities
+{- Utilities -}
 import XMonad.Util.Dmenu
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.NamedScratchpad
@@ -119,12 +119,12 @@ myFocusColor = "#C691E9"      -- Dracula
 windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
 
+{- Startup -}
 myStartupHook :: X ()
 myStartupHook = do
-    --spawnOnce "xrandr --output DP-0 --mode 3440x1440 --rate 144 &" -- Xrandr (3440x1440 DP)
-    --spawnOnce "xrandr --output HDMI-0 --mode 1920x1080 --rate 60 &" -- Xrandr (1080p HDMI
-    spawnOnce "xrandr --output DisplayPort-0 --mode 3440x1440 --rate 144 --pos 0x1440 --output DisplayPort-1 --mode 3440x1440 --rate 144 --pos 1700x0&"
-    --spawnOnce "xrandr --output DP-0 --mode 3440x1440 --rate 144 --pos 1440x720 --output DP-2 --mode 3440x1440 --rate 144 --rotate right --pos 0x0 &"
+    spawnOnce "xrandr --output DisplayPort-0 --mode 3440x1440 --rate 144 --pos 0x1440 --output DisplayPort-1 --mode 3440x1440 --rate 144 --pos 1700x0 &" -- (2x 3440x1440 DP)
+    --spawnOnce "xrandr --output DP-0 --mode 3440x1440 --rate 144 &" -- (3440x1440 DP)
+    --spawnOnce "xrandr --output HDMI-0 --mode 1920x1080 --rate 60 &" -- (1080p HDMI)
     spawnOnce "picom --experimental-backend &"          -- Compositor
     spawnOnce "clipmenud &"                             -- Clipboard manager
     spawnOnce "dunst &"                                 -- Notification daemon
@@ -146,7 +146,7 @@ myColorizer = colorRangeFromClassName
                   (0xc0,0xa7,0x9a)      -- inactive fg
                   (0x28,0x2c,0x34)      -- active fg
 
--- gridSelect Menu Layout
+{- gridSelect Menu Layout -}
 mygridConfig :: p -> GSConfig Window
 mygridConfig colorizer = (buildDefaultGSConfig myColorizer)
     { gs_cellheight   = 40
@@ -317,14 +317,14 @@ myManageHook = composeAll
      , className =? "Gedit"                     --> doCenterFloat
      , className =? "Nemo"                      --> doCenterFloat
      , title =? "Image Viewer"                  --> doCenterFloat
-     , title =? "Virtual Machine Manager"	--> doCenterFloat
+     , title =? "Virtual Machine Manager"       --> doCenterFloat
      , title =? "Nitrogen"                      --> doCenterFloat
      , title =? "galculator"                    --> doCenterFloat
      , title =? "Sign in to Minecraft"          --> doCenterFloat
      , title =? "Minecraft Launcher"            --> doCenterFloat
      -- , className =? "Steam"                     --> doCenterFloat
 
-     {- Shift Rules-}
+     {- Shift Rules -}
      --, title =? "Alacritty"                     --> doShift ( myWorkspaces !! 0 )
      --, title =? "Mozilla Firefox"               --> doShift ( myWorkspaces !! 1 )
      --, title =? "LibreWolf"                     --> doShift ( myWorkspaces !! 1 )
