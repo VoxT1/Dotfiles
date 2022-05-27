@@ -50,13 +50,16 @@ ex (){
 
 
 ### Startup ###
-neofetch
+# neofetch
 # pfetch
 exa -lh --color=always --group-directories-first
 
 export PS1=" \w [$(date +%H:%M:%S)] > "
 export VISUAL=nvim
 export EDITOR=nvim
+
+export LFS=/mnt/scratch
+export LFS_TGT=x86_64-lfs-linux-gnu
 
 ### PATH ###
 export PATH="$HOME/.emacs.d/bin/":$PATH
@@ -70,10 +73,6 @@ export SUPERUSER=doas
 ### Aliases ###
 ## Superuser ##
 alias ss="$SUPERUSER su"
-
-## Bookmarks ##
-alias dcol="cd $HOME/College"
-alias dgit="cd $HOME/Git"
 
 ## Shortcuts ##
 alias x="startx"
@@ -142,8 +141,8 @@ alias repen="$SUPERUSER eselect repository enable"    # Enable repository
 alias repds="$SUPERUSER eselect repository disable"   # Disable repository
 alias reprm="$SUPERUSER eselect repository remove"    # Remove repository
 # Kernel #
-alias ke="cd /usr/src/linux && $SUPERUSER make menuconfig"
-alias kb="cd /usr/src/linux && time $SUPERUSER make -j14 && $SUPERUSER make modules_install"
+alias kered="cd /usr/src/linux && $SUPERUSER make menuconfig"
+alias kerbuild="cd /usr/src/linux && time $SUPERUSER make -j14 && $SUPERUSER make modules_install && $SUPERUSER make install"
 alias gmk="$SUPERUSER grub-mkconfig -o /boot/grub/grub.cfg"
 
 ## Pacman ##
@@ -160,6 +159,7 @@ alias gmk="$SUPERUSER grub-mkconfig -o /boot/grub/grub.cfg"
 ## Services ##
 alias ruadd="$SUPERUSER rc-update add"
 alias rudel="$SUPERUSER rc-update del"
+alias dm="$SUPERUSER rc-service display-manager start"
 
 ## System Files ##
 alias mkc="$SUPERUSER $EDITOR /etc/portage/make.conf"
@@ -190,5 +190,3 @@ alias poweroff="$SUPERUSER poweroff"
 
 ### Starship Prompt ###
 eval "$(starship init bash)"
-
-
