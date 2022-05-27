@@ -26,7 +26,7 @@ Config { font            = "xft:Mononoki:weight=bold:pixelsize=14:antialias=true
        --   an integer for the percentage width, so 100 would be 100%.
        --   an integer for the minimum pixel height for xmobar, so 24 would force a height of at least 24 pixels.
        --   NOTE: The height should be the same as the trayer (system tray) height.
-       , position       = TopSize L 100 24
+       , position       = BottomSize L 100 24
        , lowerOnStart = True
        , hideOnStart  = False
        , allDesktops  = True
@@ -56,7 +56,7 @@ Config { font            = "xft:Mononoki:weight=bold:pixelsize=14:antialias=true
                         -- Battery
                     , Run BatteryP ["BAT0"] ["-t", "<acstatus><watts> (<left>%)"] 360
                         -- Time and date
-                    , Run Date "%b %d %Y - (%H:%M) " "date" 50
+                    , Run Date "%b %d %Y - (%H:%M:%S) " "date" 10
                         -- Script that dynamically adjusts xmobar padding depending on number of trayer icons.
                     , Run Com ".config/xmobar/trayer-padding-icon.sh" [] "trayerpad" 20
                         -- Prints out the left side items such as workspaces, layout, etc.
