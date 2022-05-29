@@ -122,7 +122,7 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 ## Git ##
-alias dots="/usr/bin/git --git-dir=$HOME/Git/voxDots --work-tree=$HOME"
+alias dots="/usr/bin/git --git-dir=$HOME/Git/Dotfiles --work-tree=$HOME"
 
 ## Portage ##
 alias emi="time $SUPERUSER emerge -v"                                     # Emerge
