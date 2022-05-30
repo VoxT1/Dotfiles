@@ -55,17 +55,16 @@ ex (){
 # pfetch
 exa -lh --color=always --group-directories-first
 
+## Prompt ##
 export PS1=" \w [$(date +%H:%M:%S)] > "
+
+## Exports ##
 export VISUAL=nvim
 export EDITOR=nvim
-
 export LFS=/mnt/scratch
 export LFS_TGT=x86_64-lfs-linux-gnu
-
-### PATH ###
 export PATH="$HOME/.emacs.d/bin/":$PATH
 export PATH="$HOME/.local/bin/":$PATH
-export __GL_SHADER_DISK_CACHE_PATH=$XDG_CACHE_HOME
 
 ### Administration ###
 export SUPERUSER=doas
@@ -73,7 +72,7 @@ export SUPERUSER=doas
 
 ### Aliases ###
 ## Superuser ##
-alias ss="$SUPERUSER su"
+alias root="$SUPERUSER su"
 
 ## Shortcuts ##
 alias x="startx"
@@ -89,13 +88,15 @@ alias lsb="lsblk"
 alias bid="$SUPERUSER blkid"
 alias nfet="neofetch"
 alias iso="tree /media/hdd/ISOs/"
-# List #
+
+## List ##
 alias ls='exa -ahl --color=always --group-directories-first'  # All files and dirs
 alias la='exa -ahl --color=always --group-directories-first'  # All files and dirs
 alias ll='exa -lh --color=always --group-directories-first'   # Long format
 alias lt='exa -aT --color=always --group-directories-first'   # Tree listing
 alias l.='exa -a | egrep "^\."'                               # Lists dotfiles
-# Youtube Downloading #
+
+## Youtube Downloading ##
 alias yta-aac="youtube-dl --extract-audio --audio-format aac"
 alias yta-best="youtube-dl --extract-audio --audio-format best"
 alias yta-flac="youtube-dl --extract-audio --audio-format flac"
@@ -113,9 +114,9 @@ alias em="emacs"
 alias sem="$SUPERUSER emacs"
 
 ## Confirmation Safety-net ##
-alias mv="mv -i"
-alias rm="rm -i"
-alias cp="cp -i"
+alias mv="mv -iv"
+alias rm="rm -iv"
+alias cp="cp -iv"
 
 ## Colorize Grep Output ##
 alias grep='grep --color=auto'
@@ -126,21 +127,23 @@ alias fgrep='fgrep --color=auto'
 alias dots="/usr/bin/git --git-dir=$HOME/Git/Dotfiles --work-tree=$HOME"
 
 ## Portage ##
-alias emi="time $SUPERUSER emerge -v"                                     # Emerge
-alias emr="$SUPERUSER emerge -c"                                          # Depclean
-alias emd="$SUPERUSER emerge --deselect"				  # Deselect from @world
-alias emS="$SUPERUSER emerge --sync"                                      # Sync
-alias ems="$SUPERUSER emerge -s"                                          # Search
-alias emu="time $SUPERUSER emerge -uv"                                    # Update single package
-alias emU="$SUPERUSER emerge --sync && time doas emerge -uvDN @world"     # Update @world
-alias emmod="$SUPERUSER emerge @module-rebuild"				  # Rebuild modules
-alias emt="$SUPERUSER qlop -H"                                            # Show time that a package took to compile
-alias pkg="qlist -I | wc -l"                                        # Package count
-alias news="$SUPERUSER eselect news read"                                 # Show news
+alias emi="time $SUPERUSER emerge -v"                                   # Emerge
+alias emr="$SUPERUSER emerge -c"                                        # Depclean
+alias emd="$SUPERUSER emerge --deselect"				# Deselect from @world
+alias emS="$SUPERUSER emerge --sync"                                    # Sync
+alias ems="$SUPERUSER emerge -s"                                        # Search
+alias emu="time $SUPERUSER emerge -uv"                                  # Update single package
+alias emU="$SUPERUSER emerge --sync && time doas emerge -uvDN @world"   # Update @world
+alias emmod="$SUPERUSER emerge @module-rebuild"				# Rebuild modules
+alias emt="$SUPERUSER qlop -H"                                          # Show time that a package took to compile
+alias pkg="qlist -I | wc -l"						# Package count
+alias news="$SUPERUSER eselect news read"                               # Show news
+
 # Repos/Overlays #
 alias repen="$SUPERUSER eselect repository enable"    # Enable repository
 alias repds="$SUPERUSER eselect repository disable"   # Disable repository
 alias reprm="$SUPERUSER eselect repository remove"    # Remove repository
+
 # Kernel #
 alias kered="cd /usr/src/linux && $SUPERUSER make menuconfig"
 alias kerbuild="cd /usr/src/linux && time $SUPERUSER make -j14 && $SUPERUSER make modules_install && $SUPERUSER make install"
@@ -157,12 +160,12 @@ alias gmk="$SUPERUSER grub-mkconfig -o /boot/grub/grub.cfg"
 #alias prs="paru -Ss"
 #alias pU="paru -Syuu"
 
-## Services ##
+## Gentoo Services ##
 alias ruadd="$SUPERUSER rc-update add"
 alias rudel="$SUPERUSER rc-update del"
 alias dm="$SUPERUSER rc-service display-manager start"
 
-## System Files ##
+## Gentoo System Files ##
 alias mkc="$SUPERUSER $EDITOR /etc/portage/make.conf"
 alias pak="$SUPERUSER $EDITOR /etc/portage/package.accept_keywords"
 alias fst="$SUPERUSER $EDITOR /etc/fstab"
