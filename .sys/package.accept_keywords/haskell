@@ -1,0 +1,6 @@
+dev-haskell/* ~amd64
+x11-wm/xmonad ~amd64
+x11-wm/xmonad-contrib ~amd64
+dev-lang/ghc ~amd64
+app-admin/haskell-updater ~amd64
+x11-misc/xmobar ~amd64
