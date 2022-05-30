@@ -1,4 +1,4 @@
-#+TITLE: .gentoo/
+#+TITLE: .sys/
 #+AUTHOR: Vox
 #  _   ___     __
 # | \ | \ \   / /  Noctivox
@@ -6,4 +6,4 @@
 # | |\  | \ V /    https://www.twitter.com/VoxNoctivox
 # |_| \_|  \_/     nv#9827
 
-While this directory is primarily for system files that pertain specifically to the Gentoo distribution (make.conf and package.accept_keywords), there are other files that can be useful on other distributions (such as my fix for screen-tearing with Nvidia and/or AMD.)
+This directory is for any system files that aid in setting up a Linux distribution. This includes Portage config files for Gentoo and graphics config files to fix screen-tearing on Nvidia and/or AMD.
