@@ -67,6 +67,7 @@ xset m 3/4
 #exec dbus-launch --sh-syntax --exit-with-session bspwm
 
 ## XMONAD ##
+/usr/libexec/polkit-gnome-authentication-agent-1 &
 exec dbus-launch --sh-syntax --exit-with-session xmonad
 
 ## GNOME ##
