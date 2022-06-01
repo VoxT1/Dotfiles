@@ -177,8 +177,8 @@ alias fst="$SUPERUSER $EDITOR /etc/fstab"
 
 ## User Configs ##
 alias brc="$EDITOR ~/.bashrc"
-alias xic="$EDITOR ~/.xinitrc"
-alias xrc="$EDITOR ~/.xmonad/xmonad.hs"
+alias xrc="$EDITOR ~/.xinitrc"
+alias xmc="$EDITOR ~/.xmonad/xmonad.hs"
 alias xbrc="$EDITOR ~/.config/xmobar/xmobarrc.hs"
 #alias dwme="$SUPERUSER $EDITOR /etc/portage/savedconfig/x11-wm/dwm-6.2.h"
 #alias dwmb="$SUPERUSER emerge dwm"
