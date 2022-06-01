@@ -49,7 +49,6 @@ ex (){
   fi
 }
 
-
 ### Startup ###
 # neofetch
 # pfetch
@@ -63,6 +62,8 @@ export VISUAL=nvim
 export EDITOR=nvim
 export LFS=/mnt/scratch
 export LFS_TGT=x86_64-lfs-linux-gnu
+
+# PATH #
 export PATH="$HOME/.emacs.d/bin/":$PATH
 export PATH="$HOME/.local/bin/":$PATH
 
@@ -129,14 +130,14 @@ alias dots="/usr/bin/git --git-dir=$HOME/Git/Dotfiles --work-tree=$HOME"
 ## Portage ##
 alias emi="time $SUPERUSER emerge -v"                                   # Emerge
 alias emr="$SUPERUSER emerge -c"                                        # Depclean
-alias emd="$SUPERUSER emerge --deselect"				# Deselect from @world
+alias emd="$SUPERUSER emerge --deselect"                                # Deselect from @world
 alias emS="$SUPERUSER emerge --sync"                                    # Sync
 alias ems="$SUPERUSER emerge -s"                                        # Search
 alias emu="time $SUPERUSER emerge -uv"                                  # Update single package
 alias emU="$SUPERUSER emerge --sync && time doas emerge -uvDN @world"   # Update @world
-alias emmod="$SUPERUSER emerge @module-rebuild"				# Rebuild modules
+alias emmod="$SUPERUSER emerge @module-rebuild"                         # Rebuild modules
 alias emt="$SUPERUSER qlop -H"                                          # Show time that a package took to compile
-alias pkg="qlist -I | wc -l"						# Package count
+alias pkg="qlist -I | wc -l"                                            # Package count
 alias news="$SUPERUSER eselect news read"                               # Show news
 
 # Repos/Overlays #
@@ -144,10 +145,18 @@ alias repen="$SUPERUSER eselect repository enable"    # Enable repository
 alias repds="$SUPERUSER eselect repository disable"   # Disable repository
 alias reprm="$SUPERUSER eselect repository remove"    # Remove repository
 
-# Kernel #
+## Kernel ##
 alias kered="cd /usr/src/linux && $SUPERUSER make menuconfig"
 alias kerbuild="cd /usr/src/linux && time $SUPERUSER make -j14 && $SUPERUSER make modules_install && $SUPERUSER make install"
 alias gmk="$SUPERUSER grub-mkconfig -o /boot/grub/grub.cfg"
+
+## Gentoo Services ##
+alias ruadd="$SUPERUSER rc-update add"
+alias rudel="$SUPERUSER rc-update del"
+
+## Gentoo System Files ##
+alias mkc="$SUPERUSER $EDITOR /etc/portage/make.conf"
+alias fst="$SUPERUSER $EDITOR /etc/fstab"
 
 ## Pacman ##
 #alias pmi="sudo pacman -S"
@@ -160,15 +169,11 @@ alias gmk="$SUPERUSER grub-mkconfig -o /boot/grub/grub.cfg"
 #alias prs="paru -Ss"
 #alias pU="paru -Syuu"
 
-## Gentoo Services ##
-alias ruadd="$SUPERUSER rc-update add"
-alias rudel="$SUPERUSER rc-update del"
-alias dm="$SUPERUSER rc-service display-manager start"
-
-## Gentoo System Files ##
-alias mkc="$SUPERUSER $EDITOR /etc/portage/make.conf"
-alias pak="$SUPERUSER $EDITOR /etc/portage/package.accept_keywords"
-alias fst="$SUPERUSER $EDITOR /etc/fstab"
+## Apt ##
+#alias api="$SUPERUSER apt install"
+#alias apr="$SUPERUSER apt remove"
+#alias apar="$SUPERUSER apt autoremove"
+#alias apU="$SUPERUSER apt update && $SUPERUSER apt upgrade"
 
 ## User Configs ##
 alias brc="$EDITOR ~/.bashrc"
@@ -177,11 +182,11 @@ alias xrc="$EDITOR ~/.xmonad/xmonad.hs"
 alias xbrc="$EDITOR ~/.config/xmobar/xmobarrc.hs"
 #alias dwme="$SUPERUSER $EDITOR /etc/portage/savedconfig/x11-wm/dwm-6.2.h"
 #alias dwmb="$SUPERUSER emerge dwm"
-alias hlc="$EDITOR ~/.config/herbstluftwm/autostart"
-alias bsc="$EDITOR ~/.config/bspwm/bspwmrc"
-alias sxc="$EDITOR ~/.config/sxhkd/sxhkdrc"
-alias pbc="$EDITOR ~/.config/polybar/config"
-alias pbl="$EDITOR ~/.config/polybar/launch.sh"
+#alias hlc="$EDITOR ~/.config/herbstluftwm/autostart"
+#alias bsc="$EDITOR ~/.config/bspwm/bspwmrc"
+#alias sxc="$EDITOR ~/.config/sxhkd/sxhkdrc"
+#alias pbc="$EDITOR ~/.config/polybar/config"
+#alias pbl="$EDITOR ~/.config/polybar/launch.sh"
 alias alc="$EDITOR ~/.config/alacritty/alacritty.yml"
 
 ## Rick Roll ##
