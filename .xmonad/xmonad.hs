@@ -122,7 +122,9 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 {- Startup -}
 myStartupHook :: X ()
 myStartupHook = do
-    spawnOnce "xrandr --output DisplayPort-0 --mode 3440x1440 --rate 144 --pos 0x1440 --output DisplayPort-1 --mode 3440x1440 --rate 144 --pos 1700x0 &" -- (2x 3440x1440 DP)
+    spawnOnce "xrandr --output DisplayPort-0 --mode 3440x1440 --rate 144 --output DisplayPort-1 --mode 3440x1440 --rate 144 --left-of DisplayPort-0 &"       -- (2x 3440x1440 DP Side-by-side)
+    --spawnOnce "xrandr --output DisplayPort-0 --mode 3440x1440 --rate 144 --pos 1440x2000 --output DisplayPort-1 --mode 3440x1440 --rate 144 --rotate right --pos 0x0 &"       -- (2x 3440x1440 DP Side-by-side;rotated)
+    --spawnOnce "xrandr --output DisplayPort-0 --mode 3440x1440 --rate 144 --output DisplayPort-1 --mode 3440x1440 --rate 144 --above DisplayPort-0 &"          -- (2x 3440x1440 DP 1 above DP 0)
     --spawnOnce "xrandr --output DP-0 --mode 3440x1440 --rate 144 &" -- (3440x1440 DP)
     --spawnOnce "xrandr --output HDMI-0 --mode 1920x1080 --rate 60 &" -- (1080p HDMI)
     spawnOnce "picom --experimental-backend &"          -- Compositor
@@ -135,6 +137,7 @@ myStartupHook = do
     --spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x282c34 --height 24 &"    --Doom One
     --spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0xE7E7E7 --height 24 &"    --Light
     spawnOnce "trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 --tint 0x13131F --height 24 &"      --Dark
+    spawnOnce "blueman-applet &"                        -- Bluetooth applet
     spawnOnce "nm-applet &"                             -- Network Manager applet
     setWMName "Xmonad"
 
@@ -351,11 +354,10 @@ myKeys =
 
         , ("M-<Escape>", spawn "i3lock -c 1E1F29")      -- Locks screen
 
-        , ("M1-q", kill1)                               -- Kill the currently focused client
-        , ("M1-S-q", killAll)                           -- Kill all windows on current workspace
+        , ("M-q", kill1)                               -- Kill the currently focused client
 
         {- Dmenu Things -}
-        , ("M-<Return>", spawn "dmenu_run -p 'Execute:'")      -- Dmenu
+        , ("M-<Return>", spawn "dmenu_run -p 'Execute:'")               -- Dmenu
         , ("M1-<Space> v", spawn "clipmenu")                            -- Clipmenu
         , ("M1-<Space> c", spawn "$HOME/.scripts/dmenu/dm-configs")     -- Edit config files
         , ("M1-<Space> p", spawn "$HOME/.scripts/dmenu/dm-portage")     -- Run portage actions
@@ -367,8 +369,7 @@ myKeys =
         , ("M1-S-b", spawn "firefox-bin")               -- Firefox
         , ("M1-h", spawn (myFileManager))               -- File Manager
         , ("M1-d", spawn ("discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy --no-sandbox"))
-        , ("M1-c", spawn ("galculator"))
-        , ("<Print>", spawn ("flameshot gui"))
+        , ("<Print>", spawn ("flameshot gui"))          -- Screenshot
 
         {- Writing -}
         , ("M1-w e", spawn ("emacs"))
@@ -386,9 +387,12 @@ myKeys =
         , ("M1-m p", spawn ("pavucontrol"))
         , ("M1-m m", spawn ("musescore"))
 
+        {- Code -}
+        , ("M1-c v", spawn ("vscode"))
+
         {- Virtualization -}
         , ("M1-v v", spawn ("virt-manager"))
-	, ("M1-v b", spawn ("virtualbox"))
+        , ("M1-v b", spawn ("virtualbox"))
 
         {- Workspaces --}
         --, ("M-.", nextScreen)  -- Switch focus to next monitor

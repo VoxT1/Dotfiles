@@ -1,7 +1,0 @@
-
-xmonad.hs:320:42: warning: [-Wtabs]
-    Tab character found here, and in one further location.
-    Please use spaces instead.
-    |
-320 |      , title =? "Virtual Machine Manager"       --> doCenterFloat
-    |                                          ^^^^^^^
