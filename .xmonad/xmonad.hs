@@ -391,7 +391,7 @@ myKeys =
         , ("M1-c v", spawn ("vscode"))
 
         {- Virtualization -}
-        , ("M1-v v", spawn ("virt-manager"))
+        , ("M1-k v", spawn ("virt-manager"))
         , ("M1-v b", spawn ("virtualbox"))
 
         {- Workspaces --}
@@ -403,9 +403,8 @@ myKeys =
         , ("M-S-,", shiftTo Prev nonNSP >> moveTo Prev nonNSP)  -- Shifts focused window to prev ws
 
         {- Floating Windows -}
-        , ("M-f", sendMessage (T.Toggle "floats"))      -- Toggles my 'floats' layout
-        , ("M-t", withFocused $ windows . W.sink)       -- Push floating window back to tile
-        , ("M-S-t", sinkAll)                            -- Push ALL floating windows to tile
+        , ("M-C-f", sendMessage (T.Toggle "floats"))      -- Toggles my 'floats' layout
+        , ("M-C-t", withFocused $ windows . W.sink)       -- Push floating window back to tile
 
         {- Grid Select -}
         , ("C-g g", spawnSelected' myAppGrid)                 -- grid select favorite apps
@@ -413,15 +412,11 @@ myKeys =
         , ("C-g b", bringSelected $ mygridConfig myColorizer) -- bring selected window
 
         {- Window Navigation -}
-        , ("M-C-j", windows W.focusDown)    -- Move focus to the next window
-        , ("M-C-k", windows W.focusUp)      -- Move focus to the prev window
-        , ("M-C-S-j", windows W.swapDown)   -- Swap focused window with next window
-        , ("M-C-S-k", windows W.swapUp)     -- Swap focused window with prev window
+        , ("M-h", windows W.focusDown)    -- Move focus to the next window
+        , ("M-t", windows W.focusUp)      -- Move focus to the prev window
+        , ("M-S-h", windows W.swapDown)   -- Swap focused window with next window
+        , ("M-S-t", windows W.swapUp)     -- Swap focused window with prev window
         
-        --, ("M-C-h", windows W.focusDown)    -- Move focus to the next window
-        --, ("M-C-t", windows W.focusUp)      -- Move focus to the prev window
-        --, ("M-C-S-h", windows W.swapDown)   -- Swap focused window with next window
-        --, ("M-C-S-t", windows W.swapUp)     -- Swap focused window with prev window
 
         , ("M-C-m", windows W.focusMaster)      -- Move focus to the master window
         , ("M-S-<Return>", windows W.swapMaster)     -- Swap the focused window and the master window
@@ -449,11 +444,8 @@ myKeys =
         --, ("M-C-<Down>", decreaseLimit)                 -- Decrease # of windows
 
         {- Resizing Windows -}
-        , ("M-C-h", sendMessage Shrink)                   -- Shrink horiz window width
-        , ("M-C-l", sendMessage Expand)                   -- Expand horiz window width
-        
-        --, ("M-C-S-d", sendMessage Shrink)                 -- Shrink horiz window width
-        --, ("M-C-S-n", sendMessage Expand)                 -- Expand horiz window width
+        , ("M-d", sendMessage Shrink)                   -- Shrink horiz window width
+        , ("M-n", sendMessage Expand)                   -- Expand horiz window width
 
         --, ("M-M1-j", sendMessage MirrorShrink)          -- Shrink vert window width
         --, ("M-M1-k", sendMessage MirrorExpand)          -- Expand vert window width
