@@ -123,7 +123,7 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 myStartupHook :: X ()
 myStartupHook = do
     spawnOnce "xrandr --output DisplayPort-0 --mode 3440x1440 --rate 144 --output DisplayPort-1 --mode 3440x1440 --rate 144 --left-of DisplayPort-0 &"       -- (2x 3440x1440 DP Side-by-side)
-    --spawnOnce "xrandr --output DisplayPort-0 --mode 3440x1440 --rate 144 --pos 1440x2000 --output DisplayPort-1 --mode 3440x1440 --rate 144 --rotate right --pos 0x0 &"       -- (2x 3440x1440 DP Side-by-side;rotated)
+    --spawnOnce "xrandr --output DisplayPort-0 --mode 3440x1440 --rate 144 --pos 1440x720 --output DisplayPort-1 --mode 3440x1440 --rate 144 --rotate right --pos 0x0 &"       -- (2x 3440x1440 DP Side-by-side;rotated)
     --spawnOnce "xrandr --output DisplayPort-0 --mode 3440x1440 --rate 144 --output DisplayPort-1 --mode 3440x1440 --rate 144 --above DisplayPort-0 &"          -- (2x 3440x1440 DP 1 above DP 0)
     --spawnOnce "xrandr --output DP-0 --mode 3440x1440 --rate 144 &" -- (3440x1440 DP)
     --spawnOnce "xrandr --output HDMI-0 --mode 1920x1080 --rate 60 &" -- (1080p HDMI)
@@ -283,8 +283,9 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
                $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
              where
                {- Replace first line layout to set default; the rest will be cycled through. -}
-               myDefaultLayout =     withBorder myBorderWidth threeCol 
-                                 ||| spirals 
+               myDefaultLayout =     withBorder myBorderWidth grid 
+                                 ||| threeCol
+				 ||| spirals
                                  ||| tall
                                  ||| grid
                                  ||| noBorders monocle
@@ -373,7 +374,7 @@ myKeys =
 
         {- Writing -}
         , ("M1-w e", spawn ("emacs"))
-        , ("M1-w l", spawn ("leafpad"))
+        , ("M1-w p", spawn ("mousepad"))
         , ("M1-w o", spawn ("libreoffice"))
         , ("M1-w v", spawn ("vscode"))
 
@@ -412,14 +413,19 @@ myKeys =
         , ("C-g b", bringSelected $ mygridConfig myColorizer) -- bring selected window
 
         {- Window Navigation -}
-        , ("M-h", windows W.focusDown)    -- Move focus to the next window
-        , ("M-t", windows W.focusUp)      -- Move focus to the prev window
-        , ("M-S-h", windows W.swapDown)   -- Swap focused window with next window
-        , ("M-S-t", windows W.swapUp)     -- Swap focused window with prev window
+	, ("M-j", windows W.focusDown)    -- Move focus to the next window (QWERTY)
+        , ("M-k", windows W.focusUp)      -- Move focus to the prev window (QWERTY)
+        , ("M-S-j", windows W.swapDown)   -- Swap focused window with next window (QWERTY)
+        , ("M-S-k", windows W.swapUp)     -- Swap focused window with prev window (QWERTY)
+	
+        --, ("M-h", windows W.focusDown)    -- Move focus to the next window (Dvorak)
+        --, ("M-t", windows W.focusUp)      -- Move focus to the prev window (Dvorak) 
+        --, ("M-S-h", windows W.swapDown)   -- Swap focused window with next window (Dvorak)
+        --, ("M-S-t", windows W.swapUp)     -- Swap focused window with prev window (Dvorak)
         
 
         , ("M-C-m", windows W.focusMaster)      -- Move focus to the master window
-        , ("M-S-<Return>", windows W.swapMaster)     -- Swap the focused window and the master window
+        , ("M-C-<Return>", windows W.swapMaster)     -- Swap the focused window and the master window
         , ("M-<Backspace>", promote)            -- Moves focused window to master, others maintain order
         , ("M-S-<Tab>", rotSlavesDown)          -- Rotate all windows except master and keep focus in place
         , ("M-C-<Tab>", rotAllDown)             -- Rotate all the windows in the current stack
@@ -444,11 +450,11 @@ myKeys =
         --, ("M-C-<Down>", decreaseLimit)                 -- Decrease # of windows
 
         {- Resizing Windows -}
-        , ("M-d", sendMessage Shrink)                   -- Shrink horiz window width
-        , ("M-n", sendMessage Expand)                   -- Expand horiz window width
-
-        --, ("M-M1-j", sendMessage MirrorShrink)          -- Shrink vert window width
-        --, ("M-M1-k", sendMessage MirrorExpand)          -- Expand vert window width
+        , ("M-M1-j", sendMessage MirrorShrink)          -- Shrink vert window width (QWERTY)
+        , ("M-M1-k", sendMessage MirrorExpand)          -- Expand vert window width (QWERTY)
+	
+        --, ("M-d", sendMessage Shrink)                   -- Shrink horiz window width (Dvorak)
+        --, ("M-n", sendMessage Expand)                   -- Expand horiz window width (Dvorak)
         ]
 
     {- The following are needed for named scratchpads. -}
