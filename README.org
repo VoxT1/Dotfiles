@@ -1,0 +1,12 @@
+#+title: Vox's Dotfiles
+#+author: Vox
+
+* Files with dots
+/Dotfiles/ are files that are "hidden" due to the dot in front of their names. They specifically refer to configuration files for a Linux system; window managers, file managers, text editors, most programs have a configuration file or two in the .config/ folder. By saving one's dotfiles, their configs can be deployed on any system, perhaps with some minor tweaking.
+
+* My Distribution of Choice
+Since October of 2020, Gentoo Linux has been my go-to distribution, and as such this repo is full of different system files that may be specific to Gentoo. These files are kept in the ~/.sys/gentoo/ directory.
+
+* My Window Managers
+
+* System Files
