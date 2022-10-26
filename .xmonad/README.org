@@ -6,7 +6,6 @@
 # | | | | |  _   https://www.github.com/VoxT1
 # | |_| | |_| |  https://www.twitter.com/umbralgoat
 #  \__,_|\____|  ψι#6283
-#
 
 * Table Of Contents :toc:
 - [[#about-this-config][About This Config]]
