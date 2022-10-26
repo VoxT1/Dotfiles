@@ -1,8 +1,12 @@
-#+TITLE: XMonad Config
-#+AUTHOR: Derek Taylor
-#+PROPERTY: header-args :tangle xmonad.hs
-#+auto_tangle: t
+#+TITLE: Vox's XMonad Config
+#+AUTHOR: Vox
 #+STARTUP: showeverything
+#         ____
+#  _   _ / ___|  UmbralGoat [Vox]
+# | | | | |  _   https://www.github.com/VoxT1
+# | |_| | |_| |  https://www.twitter.com/umbralgoat
+#  \__,_|\____|  ψι#6283
+#
 
 * Table Of Contents :toc:
 - [[#about-this-config][About This Config]]
@@ -12,7 +16,6 @@
 - [[#gridselect][Gridselect]]
   - [[#gridselect-configuration][GridSelect Configuration]]
   - [[#gridselect-menus][Gridselect Menus]]
-- [[#scratchpads][Scratchpads]]
 - [[#layouts][Layouts]]
 - [[#workspaces][Workspaces]]
 - [[#managehook][Managehook]]
@@ -23,20 +26,14 @@
 
 * About This Config
 #+CAPTION: XMonad Scrot
-#+ATTR_HTML: :alt XMonad Scrot :title XMonad Scrot :align left
-[[https://gitlab.com/dwt1/dotfiles/-/raw/master/.screenshots/dotfiles05-thumb.png]]
+[[https://raw.githubusercontent.com/VoxT1/Dotfiles/main/Pictures/Desktops/Gentoo/Saturn1.png]]
 
 Xmonad is a dynamically tiling X11 window manager that is written and configured in Haskell.
 - XMonad Official Website: [[https://xmonad.org][https://xmonad.org]]
 - Haskell Official Website: [[https://haskell.org][https://haskell.org]]
 
-This is the xmonad configuration of Derek Taylor (DistroTube)
-- My YouTube: [[http://www.youtube.com/c/DistroTube][http://www.youtube.com/c/DistroTube]]
-- My GitLab:  [[http://www.gitlab.com/dwt1/][http://www.gitlab.com/dwt1/]]
-
-Keep in mind, that my configs are purposely bloated with examples of what you can do with xmonad. It is written more as a study guide rather than a config that you should download and use.
-
-NOTE: You will also need my xmobar config, which is located here: https://gitlab.com/dwt1/dotfiles/-/tree/master/.config/xmobar
+This config is built off of Derek Taylor's (DistroTube) XMonad config, available from their GitLab.
+- DT's GitLab:  [[http://www.gitlab.com/dwt1/][http://www.gitlab.com/dwt1/]]
 
 * Imports
 These are Haskell modules that we must import so that we can use their functions later in the config.
@@ -368,45 +365,6 @@ gsUtilities =
   , ("Vim", (myTerminal ++ " -e vim"))
   ]
 
-#+END_SRC
-
-* Scratchpads
-Allows to have several floating scratchpads running different applications.  Import Util.NamedScratchpad and bind a key to namedScratchpadSpawnAction.  In the example below, I have created named scratchpads for:
-+ alacritty -- my terminal
-+ mocp -- a terminal music player
-+ qalculate-gtk -- a nice calculator
-
-#+BEGIN_SRC haskell
-myScratchPads :: [NamedScratchpad]
-myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
-                , NS "mocp" spawnMocp findMocp manageMocp
-                , NS "calculator" spawnCalc findCalc manageCalc
-                ]
-  where
-    spawnTerm  = myTerminal ++ " -t scratchpad"
-    findTerm   = title =? "scratchpad"
-    manageTerm = customFloating $ W.RationalRect l t w h
-               where
-                 h = 0.9
-                 w = 0.9
-                 t = 0.95 -h
-                 l = 0.95 -w
-    spawnMocp  = myTerminal ++ " -t mocp -e mocp"
-    findMocp   = title =? "mocp"
-    manageMocp = customFloating $ W.RationalRect l t w h
-               where
-                 h = 0.9
-                 w = 0.9
-                 t = 0.95 -h
-                 l = 0.95 -w
-    spawnCalc  = "qalculate-gtk"
-    findCalc   = className =? "Qalculate-gtk"
-    manageCalc = customFloating $ W.RationalRect l t w h
-               where
-                 h = 0.5
-                 w = 0.4
-                 t = 0.75 -h
-                 l = 0.70 -w
 #+END_SRC
 
 * Layouts

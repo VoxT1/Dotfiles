@@ -542,31 +542,13 @@ myKeys c =
   , ("M-S-,",		addName "Rotate all windows except master"       $ rotSlavesDown)
   , ("M-S-.",		addName "Rotate all windows current stack"       $ rotAllDown)]
 
- -- ^++^ subKeys "Dmenu scripts"
-  --[ ("M-p h", addName "List all dmscripts"     $ spawn "dm-hub")
-  --, ("M-p a", addName "Choose ambient sound"   $ spawn "dm-sounds")
-  --, ("M-p b", addName "Set background"         $ spawn "dm-setbg")
-  --, ("M-p c", addName "Choose color scheme"    $ spawn "~/.local/bin/dtos-colorscheme")
-  --, ("M-p C", addName "Pick color from scheme" $ spawn "dm-colpick")
-  --, ("M-p e", addName "Edit config files"      $ spawn "dm-confedit")
-  --, ("M-p i", addName "Take a screenshot"      $ spawn "dm-maim")
-  --, ("M-p k", addName "Kill processes"         $ spawn "dm-kill")
-  --, ("M-p m", addName "View manpages"          $ spawn "dm-man")
-  --, ("M-p n", addName "Store and copy notes"   $ spawn "dm-note")
-  --, ("M-p o", addName "Browser bookmarks"      $ spawn "dm-bookman")
-  --, ("M-p p", addName "Passmenu"               $ spawn "passmenu -p \"Pass: \"")
-  --, ("M-p q", addName "Logout Menu"            $ spawn "dm-logout")
-  --, ("M-p r", addName "Listen to online radio" $ spawn "dm-radio")
-  --, ("M-p s", addName "Search various engines" $ spawn "dm-websearch")
-  --, ("M-p t", addName "Translate text"         $ spawn "dm-translate")]
-
   ^++^ subKeys "Programs"
   {- Utilities -}
   [("M1-<Return>",	addName "Launch terminal"	$ spawn (myTerminal))
   , ("M1-h",		addName "Launch File Manager"	$ spawn (myFileManager))	
   , ("M1-p",		addName "Launch Pavucontrol"	$ spawn "pavucontrol")
   , ("M-M1-h",		addName "Launch htop"		$ spawn (myTerminal ++ " -e htop"))
-  , ("M-v",		addName "Launch Clipmenu"	$ spawn "CM_LAUNCHER=rofi clipmenu -p 'Clipboard'")
+  , ("M-v",		addName "Launch Clipmenu"	$ spawn "CM_LAUNCHER=rofi clipmenu -p 'clipboard'")
 
   {- Browser -}
   , ("M1-b",		addName "Launch web browser"	$ spawn (myBrowser))
