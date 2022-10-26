@@ -1,0 +1,9 @@
+#+TITLE: .sys/
+#+AUTHOR: Vox
+#  _   ___     __
+# | \ | \ \   / /  Noctivox
+# |  \| |\ \ / /   https://www.github.com/VoxT1
+# | |\  | \ V /    https://www.twitter.com/VoxNoctivox
+# |_| \_|  \_/     nv#9827
+
+This directory is for any system files that aid in setting up a Linux distribution. This includes Portage config files for Gentoo and graphics config files to fix screen-tearing on Nvidia and/or AMD.

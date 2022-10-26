@@ -1,0 +1,1 @@
+WARN  2022-07-23T00:40:50.036 1965  log_path_init:95: Failed to create directory /home/vox/.cache for writing logs: Unknown system error 1
