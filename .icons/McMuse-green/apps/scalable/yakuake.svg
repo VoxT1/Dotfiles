@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" version="1.1" viewBox="0 0 16.933 16.933" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient1159-3-6" x1="-184.75" x2="-170.2" y1="-1.2655" y2="-15.817" gradientTransform="translate(219.32 28.203)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#6d7982" offset="0"/>
+   <stop stop-color="#859094" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient7064-1" x1="-177.35" x2="-177.35" y1="-1.1773" y2="-15.837" gradientTransform="matrix(.88521 0 0 .77552 198.95 25.483)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#233937" offset="0"/>
+   <stop stop-color="#232b2d" offset=".48448"/>
+   <stop stop-color="#384140" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient7076-2" x1="-177.35" x2="-177.35" y1="-1.1773" y2="-15.837" gradientTransform="matrix(.86877 0 0 .050009 196.03 26.222)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#3b454b" offset="0"/>
+   <stop stop-color="#2c353a" offset="1"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-33.373 -11.195)">
+  <rect x="34.564" y="12.385" width="14.552" height="14.552" ry="1.2138" fill="url(#linearGradient1159-3-6)"/>
+  <rect x="35.399" y="13.216" width="12.882" height="11.285" ry=".70721" fill="url(#linearGradient7064-1)" stroke="#232b2d" stroke-width=".52229"/>
+  <rect x="35.518" y="25.431" width="12.642" height=".72773" ry=".36386" fill="url(#linearGradient7076-2)"/>
+  <path d="m36.909 20.234v-0.56924l1.852 1.0542v0.53733l-1.852 1.0542v-0.56924l1.3941-0.7514z" fill="#fff" stroke-width=".092859"/>
+  <rect x="39.555" y="22.571" width="2.1166" height=".52916" rx="0" ry="0" fill="#fff"/>
+ </g>
+</svg>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" version="1.1" viewBox="0 0 16.933 16.933" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient4174-5" x1="409.57" x2="409.57" y1="543.8" y2="503.8" gradientTransform="matrix(.39688 0 0 .39688 -155.92 -198.57)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#2e3e46" offset="0"/>
+   <stop stop-color="#435a64" offset="1"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(2.2301 -.841)">
+  <rect x="-1.7009" y="1.3702" width="15.875" height="15.875" ry="7.9375" fill="url(#linearGradient4174-5)"/>
+  <path d="m6.2357 4.2743c-2.7577 0-4.9925 2.2355-4.9925 4.9925 0 2.7577 2.2355 4.9925 4.9925 4.9925 2.7577 0 4.9925-2.2355 4.9925-4.9925 0-2.7566-2.2355-4.9925-4.9925-4.9925m-0.028945 2.6599c1.2804 0 2.3195 1.0377 2.3195 2.3195 0 1.2804-1.0377 2.3195-2.3195 2.3195-1.2804 0-2.3195-1.0391-2.3195-2.3195 0-1.2804 1.0391-2.3195 2.3195-2.3195" fill="#b9d543" fill-opacity=".388"/>
+  <path d="m6.2253 3.9782c-2.9232 0-5.2928 2.369-5.2928 5.2921 0 2.9217 2.3697 5.2907 5.2928 5.2907 2.9217 0 5.2907-2.369 5.2907-5.2907 0-2.9232-2.369-5.2921-5.2907-5.2921zm0.00915 0.29596c2.7577 0 4.9927 2.2357 4.9927 4.9927 0 2.7577-2.2357 4.9927-4.9927 4.9927-2.7577 0-4.9926-2.2357-4.9926-4.9927 0-2.7566 2.2357-4.9927 4.9926-4.9927zm0.00123 1.6074c-1.8619 0-3.3726 1.509-3.3726 3.3712 0 1.8619 1.5104 3.3712 3.3726 3.3712 1.8619 0 3.3698-1.509 3.3698-3.3712 0-1.8619-1.5076-3.3712-3.3698-3.3712zm0 0.36925c1.665 0 3.0153 1.351 3.0153 3.0174 0 1.665-1.3503 3.0153-3.0153 3.0153-1.665 0-3.0174-1.3503-3.0174-3.0153 0-1.665 1.351-3.0174 3.0174-3.0174z" fill="#ffce02" fill-opacity=".84677"/>
+ </g>
+</svg>

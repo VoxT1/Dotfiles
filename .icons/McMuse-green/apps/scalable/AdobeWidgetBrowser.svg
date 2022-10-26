@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" version="1.1" viewBox="0 0 16.933 16.933" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient3204" x1="-47.481" x2="-47.481" y1="7.0535" y2="56.887" gradientTransform="matrix(.26458 0 0 .26458 21.268 1.7147)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#5beaff" offset="0"/>
+   <stop stop-color="#7da3ff" offset=".5094"/>
+   <stop stop-color="#4076ff" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient3222" x1="-25.606" x2="-25.606" y1="15.904" y2="47.956" gradientTransform="matrix(.26458 0 0 .26458 16.311 1.7147)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#94f1ff" offset="1"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-.55751 -1.6914)" stroke-linecap="round" stroke-width=".26458">
+  <path d="m2.4044 2.8821c-0.5832 0-1.0532 0.54144-1.0532 1.2139v12.124c0 0.67243 0.46997 1.2139 1.0532 1.2139h7.4197v-5.3e-4h5.8203c0.5832 1.3e-5 1.0526-0.54142 1.0526-1.2139v-12.123c0-0.67243-0.46946-1.2139-1.0526-1.2139h-13.241z" fill="url(#linearGradient3204)"/>
+  <path d="m8.2175 5.9248c-0.56444 0-1.0077 0.44377-1.0077 1.0082v0.60461h-1.6128c-0.44349 0-0.80615 0.36266-0.80615 0.80615v1.5322h0.60461c0.60476 0 1.0888 0.48406 1.0888 1.0888s-0.48406 1.0883-1.0888 1.0883h-0.60461v1.5322c0 0.4435 0.36266 0.80615 0.80615 0.80615h1.5322v-0.60461c0-0.60476 0.48355-1.0888 1.0883-1.0888s1.0888 0.48406 1.0888 1.0888v0.60461h1.5322c0.4435 0 0.80615-0.36266 0.80615-0.80615v-1.6128h0.60462c0.56444 0 1.0082-0.44326 1.0082-1.0077 0-0.56444-0.44377-1.0082-1.0082-1.0082h-0.60462v-1.6128c0-0.44349-0.36266-0.80615-0.80615-0.80615h-1.6128v-0.60461c0-0.56444-0.44377-1.0082-1.0082-1.0082z" fill="url(#linearGradient3222)"/>
+ </g>
+</svg>

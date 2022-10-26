@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" version="1.1" viewBox="0 0 16.933 16.933" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient2872" x1="8.6608" x2="8.6608" y1="14.661" y2="58.134" gradientTransform="matrix(.26458 0 0 .26458 4.0123 6.4728)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#df3d83" offset="0"/>
+   <stop stop-color="#c9005c" offset="1"/>
+  </linearGradient>
+  <radialGradient id="radialGradient4562" cx="44.28" cy="42.337" r="14.239" gradientTransform="matrix(.2964 .020988 -.018973 .26794 3.3583 5.5752)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#c9005c" offset="0"/>
+   <stop stop-color="#c9005c" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <linearGradient id="linearGradient2893" x1="46.651" x2="51.025" y1="42.57" y2="47.898" gradientTransform="matrix(.26458 0 0 .26458 4.0123 6.4728)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#f390b6" offset="0"/>
+   <stop stop-color="#ae406f" stop-opacity=".71373" offset="1"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-4.0282 -6.2332)">
+  <g stroke-linecap="round" stroke-linejoin="round">
+   <path d="m17.325 7.3012c-0.07523-0.00667-0.15238-0.00623-0.23048 0.00258l-11.264 1.2723c-0.62476 0.070544-1.071 0.62995-1.0005 1.2547l1.2718 11.264c0.070544 0.62476 0.63046 1.071 1.2552 1.0005l11.264-1.2718c0.62476-0.07054 1.071-0.63046 1.0005-1.2552l-1.2723-11.264c-0.061726-0.54666-0.49758-0.95636-1.0242-1.003z" fill="url(#linearGradient2872)" stroke-width="1.0583" style="paint-order:stroke fill markers"/>
+   <path d="m18.918 7.7343-11.33 0.011369c-0.62836 6.323e-4 -1.1334 0.50698-1.1327 1.1353l0.011369 11.33c6.324e-4 0.62836 0.50698 1.1334 1.1353 1.1327l11.33-0.01137c0.62836-6.35e-4 1.1334-0.50698 1.1327-1.1353l-0.011369-11.33c-6.35e-4 -0.62836-0.50698-1.1334-1.1353-1.1327z" fill="#dd377f" stroke-width="1.0583" style="paint-order:stroke fill markers"/>
+   <path d="m20.113 14.328s-0.44839 2.6961-3.0559 3.5363c-2.1457 0.69132 0.36137 2.4836-5.8673 3.4966l-3.17e-4 0.0043c8.0764-0.85302 8.9786-6.9947 8.9786-6.9947z" fill="url(#radialGradient4562)" stroke-width=".59428" style="paint-order:stroke fill markers"/>
+   <path d="m18.926 7.7348-11.33 0.011369c-0.62838 5.979e-4 -1.1338 0.50697-1.1333 1.1353l0.011369 11.33c5.98e-4 0.62838 0.50702 1.1333 1.1353 1.1327l3.5429-0.0041c3.323-0.52592 8.1752-2.7676 8.9121-8.0657l0.0072 6.9226-0.01085-11.33c-9.03e-4 -0.54985-0.38849-1.0057-0.90637-1.1106l5.3e-4 0.00103c-0.07405-0.014955-0.15038-0.022844-0.22893-0.022738z" fill="#e85592" stroke-width="1.0583" style="paint-order:stroke fill markers"/>
+  </g>
+  <g fill="#fff">
+   <rect transform="matrix(-.86603 .5 .5 .86603 0 0)" x="-4.6623" y="16.006" width="3.7095" height=".60109" ry=".30055" stroke-width="1.1949" style="paint-order:stroke fill markers"/>
+   <rect transform="rotate(210)" x="-18.162" y="-7.3764" width="3.7094" height=".60108" ry=".30055" stroke-width="1.1949" style="paint-order:stroke fill markers"/>
+   <rect transform="matrix(.25882 -.96593 -.96593 -.25882 0 0)" x="-11.461" y="-16.609" width="3.7095" height=".60109" ry=".30055" stroke-width="1.1949" style="paint-order:stroke fill markers"/>
+   <rect transform="rotate(30)" x="18.316" y="2.739" width="3.7094" height=".60108" ry=".30055" stroke-width="1.1949" style="paint-order:stroke fill markers"/>
+   <rect transform="matrix(.86603 -.5 -.5 -.86603 0 0)" x="4.8169" y="-20.643" width="3.7095" height=".60109" ry=".30055" stroke-width="1.1949" style="paint-order:stroke fill markers"/>
+  </g>
+  <path d="m20.063 13.242s-0.27019 2.8637-2.9456 3.9398c-2.2103 0.88893 0.59216 2.5949-5.9717 4.1264 8.4867-1.4714 8.9788-8.0264 8.9788-8.0264z" fill="url(#linearGradient2893)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.0583" style="paint-order:stroke fill markers"/>
+ </g>
+</svg>
