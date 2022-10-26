@@ -3,6 +3,8 @@
 
 This is my repository to store config files for whenever I may need them, and you are free to use them yourself!
 
+[[https://raw.githubusercontent.com/VoxT1/Dotfiles/main/Pictures/Desktops/Gentoo/Saturn1.png]]
+
 * Files with dots
 /Dotfiles/ are files that are "hidden" due to the dot in front of their names. They specifically refer to configuration files for a Linux system; window managers, file managers, text editors, most programs have a configuration file or two in the .config/ folder. By saving one's dotfiles, their configs can be deployed on any system, perhaps with some minor tweaking.
 
