@@ -1,3 +1,9 @@
+--          ____
+--   _   _ / ___|  UmbralGoat [Vox]
+--  | | | | |  _   https://www.github.com/VoxT1
+--  | |_| | |_| |  https://www.twitter.com/umbralgoat
+--   \__,_|\____|  ψι#6283
+
 {- Base -}
 import XMonad
 import System.Directory
