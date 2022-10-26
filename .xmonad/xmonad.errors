@@ -1,0 +1,8 @@
+$ ghc --make xmonad.hs -i -ilib -fforce-recomp -main-is main -v0 -outputdir /home/vox/.xmonad/build-x86_64-linux -o /home/vox/.xmonad/xmonad-x86_64-linux
+
+xmonad.hs:91:21: warning: [-Wtabs]
+    Tab character found here, and in 144 further locations.
+    Please use spaces instead.
+   |
+91 | myModMask = mod4Mask            -- Sets modkey to super/windows key
+   |                     ^^^^
