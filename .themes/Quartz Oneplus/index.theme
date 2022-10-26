@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Quartz Oneplus
+Comment=GTK Theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Quartz Oneplus
+MetacityTheme=Quartz Oneplus
+IconTheme=Luna-Light
+CursorTheme=Luna
+CursorSize=24
