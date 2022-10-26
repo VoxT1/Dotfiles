@@ -1,0 +1,31 @@
+#+TITLE: .wallpapers/
+#+AUTHOR: Vox
+#         ____
+#  _   _ / ___|  UmbralGoat [Vox]
+# | | | | |  _   https://www.github.com/VoxT1
+# | |_| | |_| |  https://www.twitter.com/umbralgoat
+#  \__,_|\____|  ψι#6283
+#
+
+*CW: There are NSFW wallpapers stored here and are prefixed with 'owo'.*
+
+These are my wallpapers, categorized as:
+** Space
+Anything to do with astrophotography or artistic interpretations of Space.
+[[https://github.com/VoxT1/voxDots/blob/main/.wallpapers/Space/pluto0.jpg]]
+
+** Abstract
+Abstract art, cool-looking geometric shapes, or artistic renderings.
+[[https://github.com/VoxT1/voxDots/blob/main/.wallpapers/Abstract/abstract0.jpg]]
+
+** Furry
+Art of anthropomorphic animals.
+[[https://github.com/VoxT1/voxDots/blob/main/.wallpapers/Furry/azzy/pinkAzzyWide.png]]
+
+** Nature
+Anything to do with the outdoors.
+[[https://github.com/VoxT1/voxDots/blob/main/.wallpapers/Nature/mountain0.jpg]]
+
+** Unus Annus
+Just some really nice fanart from the Unus Annus YouTube project.
+[[https://github.com/VoxT1/voxDots/blob/main/.wallpapers/Unus%20Annus/unusAnnus2.png]]
