@@ -1,6 +1,8 @@
 #+title: Vox's Dotfiles
 #+author: Vox
 
+This is my repository to store config files for whenever I may need them, and you are free to use them yourself!
+
 * Files with dots
 /Dotfiles/ are files that are "hidden" due to the dot in front of their names. They specifically refer to configuration files for a Linux system; window managers, file managers, text editors, most programs have a configuration file or two in the .config/ folder. By saving one's dotfiles, their configs can be deployed on any system, perhaps with some minor tweaking.
 
@@ -8,5 +10,6 @@
 Since October of 2020, Gentoo Linux has been my go-to distribution, and as such this repo is full of different system files that may be specific to Gentoo. These files are kept in the ~/.sys/gentoo/ directory.
 
 * My Window Managers
+I tend to hop between different Window Managers and Desktop Environments. It's obviously more useful to save the configs for Window Managers, since they are a pain in the ass to set up in the first place. Right now, my favorite Window Manager is XMonad, a dynamic tiling WM written in Haskell.
 
 * System Files
