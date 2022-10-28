@@ -1,8 +1,8 @@
-#  _   ___     __
-# | \ | \ \   / /  Noctivox
-# |  \| |\ \ / /   https://www.github.com/VoxT1
-# | |\  | \ V /    https://www.twitter.com/VoxNoctivox
-# |_| \_|  \_/     nv#9827
+#         ____
+#  _   _ / ___|  UmbralGoat [Vox]
+# | | | | |  _   https://www.github.com/VoxT1
+# | |_| | |_| |  https://www.twitter.com/umbralgoat
+#  \__,_|\____|  ψι#6283
 #
 # My .bashrc configuration, feel free to harvest some aliases.
 
