@@ -205,134 +205,6 @@ runSelectedAction' conf actions = do
         Just selectedAction -> selectedAction
         Nothing -> return ()
 
--- gsCategories =
---   [ ("Games",      spawnSelected' gsGames)
---   --, ("Education",   spawnSelected' gsEducation)
---   , ("Internet",   spawnSelected' gsInternet)
---   , ("Multimedia", spawnSelected' gsMultimedia)
---   , ("Office",     spawnSelected' gsOffice)
---   , ("Settings",   spawnSelected' gsSettings)
---   , ("System",     spawnSelected' gsSystem)
---   , ("Utilities",  spawnSelected' gsUtilities)
---   ]
-
-gsCategories =
-  [ ("Games",      "xdotool key super+alt+1")
-  , ("Education",  "xdotool key super+alt+2")
-  , ("Internet",   "xdotool key super+alt+3")
-  , ("Multimedia", "xdotool key super+alt+4")
-  , ("Office",     "xdotool key super+alt+5")
-  , ("Settings",   "xdotool key super+alt+6")
-  , ("System",     "xdotool key super+alt+7")
-  , ("Utilities",  "xdotool key super+alt+8")
-  ]
-
-gsGames =
-  [ ("0 A.D.", "0ad")
-  , ("Battle For Wesnoth", "wesnoth")
-  , ("OpenArena", "openarena")
-  , ("Sauerbraten", "sauerbraten")
-  , ("Steam", "steam")
-  , ("Unvanquished", "unvanquished")
-  , ("Xonotic", "xonotic-glx")
-  ]
-
-gsEducation =
-  [ ("GCompris", "gcompris-qt")
-  , ("Kstars", "kstars")
-  , ("Minuet", "minuet")
-  , ("Scratch", "scratch")
-  ]
-
-gsInternet =
-  [ ("Brave", "brave")
-  , ("Discord", "discord")
-  , ("Element", "element-desktop")
-  , ("Firefox", "firefox")
-  , ("LBRY App", "lbry")
-  , ("Mailspring", "mailspring")
-  , ("Nextcloud", "nextcloud")
-  , ("Qutebrowser", "qutebrowser")
-  , ("Transmission", "transmission-gtk")
-  , ("Zoom", "zoom")
-  ]
-
-gsMultimedia =
-  [ ("Audacity", "audacity")
-  , ("Blender", "blender")
-  , ("Deadbeef", "deadbeef")
-  , ("Kdenlive", "kdenlive")
-  , ("OBS Studio", "obs")
-  , ("VLC", "vlc")
-  ]
-
-gsOffice =
-  [ ("Document Viewer", "evince")
-  , ("LibreOffice", "libreoffice")
-  , ("LO Base", "lobase")
-  , ("LO Calc", "localc")
-  , ("LO Draw", "lodraw")
-  , ("LO Impress", "loimpress")
-  , ("LO Math", "lomath")
-  , ("LO Writer", "lowriter")
-  ]
-
-gsSettings =
-  [ ("ARandR", "arandr")
-  , ("ArchLinux Tweak Tool", "archlinux-tweak-tool")
-  , ("Customize Look and Feel", "lxappearance")
-  , ("Firewall Configuration", "sudo gufw")
-  ]
-
-gsSystem =
-  [ ("Alacritty", "alacritty")
-  , ("Bash", (myTerminal ++ " -e bash"))
-  , ("Htop", (myTerminal ++ " -e htop"))
-  , ("Fish", (myTerminal ++ " -e fish"))
-  , ("PCManFM", "pcmanfm")
-  , ("VirtualBox", "virtualbox")
-  , ("Virt-Manager", "virt-manager")
-  , ("Zsh", (myTerminal ++ " -e zsh"))
-  ]
-
-gsUtilities =
-  [ ("Emacs", "emacs")
-  , ("Emacsclient", "emacsclient -c -a 'emacs'")
-  , ("Nitrogen", "nitrogen")
-  , ("Vim", (myTerminal ++ " -e vim"))
-  ]
-
---myScratchPads :: [NamedScratchpad]
---myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
---                , NS "mocp" spawnMocp findMocp manageMocp
---                , NS "calculator" spawnCalc findCalc manageCalc
---                ]
---  where
---    spawnTerm  = myTerminal ++ " -t scratchpad"
---    findTerm   = title =? "scratchpad"
---    manageTerm = customFloating $ W.RationalRect l t w h
---               where
---                 h = 0.9
---                 w = 0.9
---                 t = 0.95 -h
---                 l = 0.95 -w
---    spawnMocp  = myTerminal ++ " -t mocp -e mocp"
---    findMocp   = title =? "mocp"
---    manageMocp = customFloating $ W.RationalRect l t w h
---               where
---                 h = 0.9
---                 w = 0.9
---                 t = 0.95 -h
---                 l = 0.95 -w
---    spawnCalc  = "qalculate-gtk"
---    findCalc   = className =? "Qalculate-gtk"
---    manageCalc = customFloating $ W.RationalRect l t w h
---               where
---                 h = 0.5
---                 w = 0.4
---                 t = 0.75 -h
---                 l = 0.70 -w
-
 --Makes setting the spacingRaw simpler to write. The spacingRaw module adds a configurable amount of space around windows.
 mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
 mySpacing i = spacingRaw False (Border i i i i) True (Border i i i i) True
@@ -544,7 +416,7 @@ myKeys c =
   , ("M-S-j",		addName "Swap focused window with next window"   $ windows W.swapDown)
   , ("M-S-k",		addName "Swap focused window with prev window"   $ windows W.swapUp)
   , ("M-S-m",		addName "Swap focused window with master window" $ windows W.swapMaster)
-  , ("M-<Backspace>",	addName "Move focused window to master"  $ promote)
+  , ("M-<Return>",	addName "Move focused window to master"  $ promote)
   , ("M-S-,",		addName "Rotate all windows except master"       $ rotSlavesDown)
   , ("M-S-.",		addName "Rotate all windows current stack"       $ rotAllDown)]
 
@@ -564,6 +436,7 @@ myKeys c =
   , ("M1-c f",		addName "Launch F-Chat"		$ spawn "./.local/bin/appimages/F-Chat-Rising-1.19.2-linux.AppImage")
   
   {- Music -}
+  , ("M1-m s",          addName "Launch Spotify"        $ spawn "spotify")
 
   {- Games -}
   , ("M1-g s",          addName "Launch Steam"          $ spawn "steam")
