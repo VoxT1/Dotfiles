@@ -129,7 +129,6 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 
 myStartupHook :: X ()
 myStartupHook = do
-  spawnOnce (mySoundPlayer ++ startupSound)
   spawn "killall conky"   -- Kill current conky on each restart
   spawn "killall trayer"  -- Kill current trayer on each restart
 
@@ -349,13 +348,6 @@ myManageHook = composeAll
   , isFullscreen -->  doFullFloat
   ]-- <+> namedScratchpadManageHook myScratchPads
 
-{- Sounds, I guess -}
-soundDir = "/opt/dtos-sounds/" -- The directory that has the sound files
-
-startupSound  = soundDir ++ "startup-01.mp3"
-shutdownSound = soundDir ++ "shutdown-01.mp3"
-dmenuSound    = soundDir ++ "menu-01.mp3"
-
 subtitle' ::  String -> ((KeyMask, KeySym), NamedAction)
 subtitle' x = ((0,0), NamedAction $ map toUpper
                       $ sep ++ "\n-- " ++ x ++ " --\n" ++ sep)
@@ -377,7 +369,7 @@ myKeys c =
   subKeys "Xmonad Essentials"
   [ ("M-C-r",		addName "Recompile XMonad"	$ spawn "xmonad --recompile")
   , ("M-S-r",		addName "Restart XMonad"	$ spawn "xmonad --restart")
-  , ("M-S-<Escape>",	addName "Quit XMonad"		$ sequence_ [spawn (mySoundPlayer ++ shutdownSound), io exitSuccess])
+  , ("M-S-<Escape>",	addName "Quit XMonad"		$ io exitSuccess)
   , ("M-q",		addName "Kill focused window"	$ kill1)
   , ("M1-<Space>",	addName "Run prompt"       	$ spawn "rofi -show run")
   , ("M-<Escape>",	addName "Lock"			$ spawn "i3lock -c 282828")
