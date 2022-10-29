@@ -1,17 +1,17 @@
-#  _   ___     __
-# | \ | \ \   / /  Noctivox
-# |  \| |\ \ / /   https://www.github.com/VoxT1
-# | |\  | \ V /    https://www.twitter.com/VoxNoctivox
-# |_| \_|  \_/     nv#9827
+#         ____
+#  _   _ / ___|  UmbralGoat [Vox]
+# | | | | |  _   https://www.github.com/VoxT1
+# | |_| | |_| |  https://www.twitter.com/umbralgoat
+#  \__,_|\____|  ψι#6283
 #
 # This is my fstab layout
-#
+
 ## UUID						Mountpoint		Type	Arguments					Checks 
 #
 ### ROOT DRIVE
 #
 ## /dev/nvme0n1p1 BOOT
-UUID=					/boot/EFI		vfat	defaults,noatime				0 2
+UUID=	/boot/EFI		vfat	defaults,noatime				0 2
 #
 ## /dev/nvme0n1p2 GENTOO 
 UUID=	/			ext4	defaults,noatime				0 1
@@ -19,7 +19,10 @@ UUID=	/			ext4	defaults,noatime				0 1
 ### INTERNAL SSD
 #
 ## /dev/sdb1 HOME
-UUID=17e19b18-2623-4185-8b2a-85f3084f109d	/home			btrfs	defaults,noatime				0 1
+UUID=e2608f0c-17d0-4d80-999c-eaee50d3e602	/home			btrfs	defaults,noatime				0 1
+#
+## /dev/sdb2 VIRTUAL MACHINES
+UUID=42605342-de4a-4cd6-98e4-86d2213fe865	/media/vm		btrfs	defaults,noatime				0 1
 #
 ### INTERNAL HARDDRIVE
 #
@@ -35,10 +38,10 @@ UUID=d1ff1146-5be5-41f0-a113-e4dbc1fd87cd	/media/torr		ext4	defaults,noatime,nof
 ### LINUX FROM SCRATCH
 #
 ## /dev/sdx2 LINUX FROM SCRATCH
-UUID=dea7ac6d-4614-40e5-987d-6d9e5895c1b0	/mnt/scratch		ext4	defaults,noatime,nofail				0 1
+#UUID=dea7ac6d-4614-40e5-987d-6d9e5895c1b0	/mnt/scratch		ext4	defaults,noatime,nofail				0 1
 #
 ## /dev/sdx3 LINUX FROM SCRATCH HOME
-UUID=210632d1-a856-4c4f-9049-bc7af91b9ffe	/mnt/scratch/home	ext4	defaults,noatime,nofail				0 1
+#UUID=210632d1-a856-4c4f-9049-bc7af91b9ffe	/mnt/scratch/home	ext4	defaults,noatime,nofail				0 1
 #
 ## tmpfs
 tmpfs						/tmp			tmpfs	rw,nosuid,noatime,nodev,size=4G,mode=1777	0 0
