@@ -1,8 +1,8 @@
-#  _   ___     __
-# | \ | \ \   / /  Noctivox
-# |  \| |\ \ / /   https://www.github.com/VoxT1
-# | |\  | \ V /    https://www.twitter.com/VoxNoctivox
-# |_| \_|  \_/     nv#9827
+#         ____
+#  _   _ / ___|  UmbralGoat [Vox]
+# | | | | |  _   https://www.github.com/VoxT1
+# | |_| | |_| |  https://www.twitter.com/umbralgoat
+#  \__,_|\____|  ψι#6283
 #
 # The .bashrc file for my root user.
 
@@ -39,3 +39,12 @@ alias to='cd'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+
+# System Things #
+alias gmk='grub-mkconfig -o /boot/grub/grub.cfg'
+alias kered='cd /usr/src/linux && make menuconfig'
+alias kerbuild='cd /usr/src/linux && make -j14 && make modules_install && make install'
+
+alias mkc="$EDITOR /etc/portage/make.conf"
+alias fst="$EDITOR /etc/fstab"
+
