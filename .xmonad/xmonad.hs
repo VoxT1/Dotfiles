@@ -4,6 +4,8 @@
 --  | |_| | |_| |  https://www.twitter.com/umbralgoat
 --   \__,_|\____|  ψι#6283
 
+-- Note: For XMonad to compile for me, it seems that libffi must be downgraded to version 3.3-r2 on Gentoo Linux.
+
 {- Base -}
 import XMonad
 import System.Directory
@@ -88,7 +90,7 @@ import XMonad.Util.SpawnOnce
 -- SolarizedLight
 -- TomorrowNight
 
-import Colors.GruvboxDark
+import Colors.OceanicNext
 
 myFont :: String
 myFont = "xft:Mononoki:regular:size=12:antialias=true:hinting=true"
@@ -132,7 +134,8 @@ myStartupHook = do
   spawn "killall conky"   -- Kill current conky on each restart
   spawn "killall trayer"  -- Kill current trayer on each restart
 
-  spawnOnce "xrandr --output DisplayPort-0 --mode 3440x1440 --rate 144 --pos 0x1440 --output DisplayPort-1 --mode 3440x1440 --rate 144 --pos 1720x0 &"	-- Xrandr
+  spawnOnce "xrandr --output DisplayPort-1 --mode 3440x1440 --rate 144 --pos 0x1440 --output DisplayPort-2 --mode 3440x1440 --rate 144 --pos 1720x0 &"	-- Xrandr
+  --spawnOnce "xrandr --output DisplayPort-1 --mode 3440x1440 --rate 144 &"	-- Xrandr (One screen)
   spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 " ++ colorTrayer ++ " --height 22 &")	-- Tray
   spawn "/usr/bin/emacs --daemon &" 						-- emacs daemon for the emacsclient
   spawn "/usr/libexec/polkit-gnome-authentication-agent-1 &"			-- Polkit Daemon
@@ -337,6 +340,7 @@ myManageHook = composeAll
   , className =? "splash"          --> doFloat
   , className =? "toolbar"         --> doFloat
   , className =? "Yad"             --> doCenterFloat
+  , className =? "RuneLite"             --> doCenterFloat
   , className =? "GParted"              --> doCenterFloat
   , className =? "MultiMC"		--> doCenterFloat
   , className =? "Gimp"            	--> doCenterFloat
@@ -372,7 +376,7 @@ myKeys c =
   , ("M-S-<Escape>",	addName "Quit XMonad"		$ io exitSuccess)
   , ("M-q",		addName "Kill focused window"	$ kill1)
   , ("M1-<Space>",	addName "Run prompt"       	$ spawn "rofi -show run")
-  , ("M-<Escape>",	addName "Lock"			$ spawn "i3lock -c 282828")
+  , ("M-<Escape>",	addName "Lock"			$ spawn "i3lock -c 1b2b34")
   , ("M-/",		addName "DTOS Help"		$ spawn "~/.local/bin/dtos-help")]
 
   ^++^ subKeys "Switch to workspace"
@@ -425,7 +429,8 @@ myKeys c =
 
   {- Chat Programs -}
   , ("M1-c d",		addName "Launch Discord"	$ spawn "discord")
-  , ("M1-c f",		addName "Launch F-Chat"		$ spawn "./.local/bin/appimages/F-Chat-Rising-1.19.2-linux.AppImage")
+  , ("M1-c f",		addName "Launch F-Chat"	$ spawn "./.local/bin/appimages/F-Chat-Rising-1.19.2-linux.AppImage")
+  , ("M1-c t",          addName "Launch Telegram"       $ spawn "telegram-desktop")
   
   {- Music -}
   , ("M1-m s",          addName "Launch Spotify"        $ spawn "spotify")
@@ -433,6 +438,7 @@ myKeys c =
   {- Games -}
   , ("M1-g s",          addName "Launch Steam"          $ spawn "steam")
   , ("M1-g m",          addName "Launch MultiMC"        $ spawn "multimc")
+  , ("M1-g r",          addName "Launch RuneLite"       $ spawn "./.local/bin/appimages/RuneLite.AppImage")
 
   {- Writing -}
   , ("M1-w e",		addName "Launch Emacs"		$ spawn "emacs")
