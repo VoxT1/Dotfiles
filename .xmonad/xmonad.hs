@@ -108,7 +108,7 @@ myEmacs :: String
 myEmacs = "emacsclient -c -a 'emacs' "  -- Makes emacs keybindings easier to type
 
 myFileManager :: String
-myFileManager = "nautilus"	-- Sets default file manager
+myFileManager = "thunar"	-- Sets default file manager
 
 myEditor :: String
 --myEditor = "emacsclient -c -a 'emacs' "  -- Sets emacs as editor
@@ -134,8 +134,8 @@ myStartupHook = do
   spawn "killall conky"   -- Kill current conky on each restart
   spawn "killall trayer"  -- Kill current trayer on each restart
 
-  spawnOnce "xrandr --output DisplayPort-1 --mode 3440x1440 --rate 144 --pos 0x1440 --output DisplayPort-2 --mode 3440x1440 --rate 144 --pos 1720x0 &"	-- Xrandr
-  --spawnOnce "xrandr --output DisplayPort-1 --mode 3440x1440 --rate 144 &"	-- Xrandr (One screen)
+  --spawnOnce "xrandr --output DisplayPort-1 --mode 3440x1440 --rate 144 --pos 0x1440 --output DisplayPort-2 --mode 3440x1440 --rate 144 --pos 1720x0 &"	-- Xrandr
+  spawnOnce "xrandr --output DisplayPort-1 --mode 3440x1440 --rate 144 &"	-- Xrandr (One screen)
   spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 " ++ colorTrayer ++ " --height 22 &")	-- Tray
   spawn "/usr/bin/emacs --daemon &" 						-- emacs daemon for the emacsclient
   spawn "/usr/libexec/polkit-gnome-authentication-agent-1 &"			-- Polkit Daemon
@@ -346,6 +346,7 @@ myManageHook = composeAll
   , className =? "Gimp"            	--> doCenterFloat
   , className =? "Pavucontrol"		--> doCenterFloat
   , className =? "Org.gnome.Nautilus"	--> doCenterFloat
+  , className =? "Thunar"		--> doCenterFloat
   , className =? "Leafpad"		--> doCenterFloat
   , title =? "Oracle VM VirtualBox Manager"  --> doFloat
   , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
