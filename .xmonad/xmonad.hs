@@ -90,7 +90,7 @@ import XMonad.Util.SpawnOnce
 -- SolarizedLight
 -- TomorrowNight
 
-import Colors.OceanicNext
+import Colors.Nord
 
 myFont :: String
 myFont = "xft:Mononoki:regular:size=12:antialias=true:hinting=true"
@@ -136,7 +136,7 @@ myStartupHook = do
 
   --spawnOnce "xrandr --output DisplayPort-1 --mode 3440x1440 --rate 144 --pos 0x1440 --output DisplayPort-2 --mode 3440x1440 --rate 144 --pos 1720x0 &"	-- Xrandr
   spawnOnce "xrandr --output DisplayPort-1 --mode 3440x1440 --rate 144 &"	-- Xrandr (One screen)
-  spawn ("sleep 2 && trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 " ++ colorTrayer ++ " --height 22 &")	-- Tray
+  --spawnOnce ("sleep 2 && trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --transparent true --alpha 0 " ++ colorTrayer ++ " --height 22 &")	-- Tray
   spawn "/usr/bin/emacs --daemon &" 						-- emacs daemon for the emacsclient
   spawn "/usr/libexec/polkit-gnome-authentication-agent-1 &"			-- Polkit Daemon
 
@@ -317,8 +317,8 @@ myLayoutHook = avoidStruts
                                         ||| tallAccordion
                                         ||| wideAccordion
 
--- myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "]
-myWorkspaces = [" dev ", " www ", " chat ", " game ", " school ", " 6 ", " 7 ", " 8 ", " 9 "]
+myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "]
+--myWorkspaces = [" dev ", " www ", " chat ", " game ", " school ", " 6 ", " 7 ", " 8 ", " 9 "]
 myWorkspaceIndices = M.fromList $ zipWith (,) myWorkspaces [1..] -- (,) == \x y -> (x,y)
 
 clickable ws = "<action=xdotool key super+"++show i++">"++ws++"</action>"
@@ -348,6 +348,10 @@ myManageHook = composeAll
   , className =? "Org.gnome.Nautilus"	--> doCenterFloat
   , className =? "Thunar"		--> doCenterFloat
   , className =? "Leafpad"		--> doCenterFloat
+  , className =? "Galculator"           --> doCenterFloat
+  , className =? "virt-manager"         --> doCenterFloat
+  , className =? "Deadbeef"             --> doCenterFloat
+  , className =? "Eog"                  --> doCenterFloat
   , title =? "Oracle VM VirtualBox Manager"  --> doFloat
   , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
   , isFullscreen -->  doFullFloat
@@ -435,16 +439,24 @@ myKeys c =
   
   {- Music -}
   , ("M1-m s",          addName "Launch Spotify"        $ spawn "spotify")
+  , ("M1-m a",          addName "Launch Audacium"       $ spawn "./.local/bin/audacium")
+  , ("M1-m m",          addName "Launch MuseScore 4"    $ spawn "./.local/bin/appimages/MuseScore4.AppImage")
 
   {- Games -}
   , ("M1-g s",          addName "Launch Steam"          $ spawn "steam")
   , ("M1-g m",          addName "Launch MultiMC"        $ spawn "multimc")
   , ("M1-g r",          addName "Launch RuneLite"       $ spawn "./.local/bin/appimages/RuneLite.AppImage")
 
+  {- Coding -}
+  , ("M1-c v",          addName "Launch VSCode"         $ spawn "vscode")
+
   {- Writing -}
   , ("M1-w e",		addName "Launch Emacs"		$ spawn "emacs")
   , ("M1-w v",		addName "Launch neovim"		$ spawn (myTerminal ++ " -e nvim"))
-  , ("M1-w l",		addName "Launch Leafpad"	$ spawn "leafpad")]
+  , ("M1-w l",		addName "Launch Leafpad"	$ spawn "leafpad")
+
+  {- Virtualization -}
+  , ("M1-v v",          addName "Launch virt-manager"   $ spawn "virt-manager")]
 
   ^++^ subKeys "Monitors"
   [ ("M-.", addName "Switch focus to next monitor" $ nextScreen)]
