@@ -50,7 +50,7 @@ ex (){
 }
 
 ### Startup ###
-neofetch
+# neofetch
 # pfetch
 # exa -lh --color=always --group-directories-first
 
@@ -63,13 +63,15 @@ export EDITOR=nvim
 export LFS=/mnt/scratch
 export LFS_TGT=x86_64-lfs-linux-gnu
 export JAVA_HOME=/opt/jdk-18.0.1.1/
+export PAT=~/Documents/Keys/PAT
 
 # PATH #
 export PATH="$HOME/.emacs.d/bin/":$PATH
 export PATH="$HOME/.local/bin/":$PATH
 export PATH="/usr/lib64/qt5/bin/":$PATH
-export PATH="$JAVA_HOME/bin:$PATH"
+export PATH="$JAVA_HOME/bin":$PATH
 export PATH="$HOME/.cabal/bin":$PATH
+export PATH="$HOME/.local/bin":$PATH
 
 ### Administration ###
 export SUPERUSER=doas
@@ -93,6 +95,7 @@ alias lsb="lsblk"
 alias bid="$SUPERUSER blkid"
 alias nfet="neofetch"
 alias iso="tree /media/hdd/ISOs/"
+#alias keyfind="xev | awk -F'[ )]+' '/^KeyPress/ {a[NR+2]} NR in a {printf "%-3s %s\n", $5, $8}'"
 
 ## List ##
 alias ls='exa -ahl --color=always --group-directories-first'  # All files and dirs
@@ -129,37 +132,38 @@ alias fgrep='fgrep --color=auto'
 
 ## Git ##
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias pat="cat $PAT"
 
 ## Portage ##
-alias emi="time $SUPERUSER emerge -v"                                   # Emerge
-alias emr="$SUPERUSER emerge -c"                                        # Depclean
-alias emd="$SUPERUSER emerge --deselect"                                # Deselect from @world
-alias emS="$SUPERUSER emerge --sync"                                    # Sync
-alias ems="$SUPERUSER emerge -s"                                        # Search
-alias emu="time $SUPERUSER emerge -uv"                                  # Update single package
-alias emU="$SUPERUSER emerge --sync && time doas emerge -uvDN @world"   # Update @world
-alias emmod="$SUPERUSER emerge @module-rebuild"                         # Rebuild modules
-alias emt="$SUPERUSER qlop -H"                                          # Show time that a package took to compile
-alias pkg="qlist -I | wc -l"                                            # Package count
-alias news="$SUPERUSER eselect news read"                               # Show news
+#alias emi="time $SUPERUSER emerge -v"                                   # Emerge
+#alias emr="$SUPERUSER emerge -c"                                        # Depclean
+#alias emd="$SUPERUSER emerge --deselect"                                # Deselect from @world
+#alias emS="$SUPERUSER emerge --sync"                                    # Sync
+#alias ems="$SUPERUSER emerge -s"                                        # Search
+#alias emu="time $SUPERUSER emerge -uv"                                  # Update single package
+#alias emU="$SUPERUSER emerge --sync && time doas emerge -uvDN @world"   # Update @world
+#alias emmod="$SUPERUSER emerge @module-rebuild"                         # Rebuild modules
+#alias emt="$SUPERUSER qlop -H"                                          # Show time that a package took to compile
+#alias pkg="qlist -I | wc -l"                                            # Package count
+#alias news="$SUPERUSER eselect news read"                               # Show news
 
 # Repos/Overlays #
-alias repen="$SUPERUSER eselect repository enable"    # Enable repository
-alias repds="$SUPERUSER eselect repository disable"   # Disable repository
+#alias repen="$SUPERUSER eselect repository enable"    # Enable repository
+#alias repds="$SUPERUSER eselect repository disable"   # Disable repository
 #alias reprm="$SUPERUSER eselect repository remove"    # Remove repository
 
 ## Kernel ##
-alias kered="cd /usr/src/linux && $SUPERUSER make menuconfig"
-alias kerbuild="cd /usr/src/linux && time $SUPERUSER make -j14 && $SUPERUSER make modules_install && $SUPERUSER make install"
-alias gmk="$SUPERUSER grub-mkconfig -o /boot/grub/grub.cfg"
+#alias kered="cd /usr/src/linux && $SUPERUSER make menuconfig"
+#alias kerbuild="cd /usr/src/linux && time $SUPERUSER make -j14 && $SUPERUSER make modules_install && $SUPERUSER make install"
+#alias gmk="$SUPERUSER grub-mkconfig -o /boot/grub/grub.cfg"
 
 ## Gentoo Services ##
-alias ruadd="$SUPERUSER rc-update add"
-alias rudel="$SUPERUSER rc-update del"
+#alias ruadd="$SUPERUSER rc-update add"
+#alias rudel="$SUPERUSER rc-update del"
 
 ## Gentoo System Files ##
-alias mkc="$SUPERUSER $EDITOR /etc/portage/make.conf"
-alias fst="$SUPERUSER $EDITOR /etc/fstab"
+#alias mkc="$SUPERUSER $EDITOR /etc/portage/make.conf"
+#alias fst="$SUPERUSER $EDITOR /etc/fstab"
 
 ## Pacman ##
 #alias pmi="sudo pacman -S"
@@ -179,12 +183,12 @@ alias fst="$SUPERUSER $EDITOR /etc/fstab"
 #alias apU="$SUPERUSER apt update && $SUPERUSER apt upgrade"
 
 ## XBPS ##
-#alias xbi="$SUPERUSER xbps-install"
-#alias xbiS="$SUPERUSER xbps-install -S"
-#alias xbiU="$SUPERUSER xbps-install -Su"
-#alias xbrR="$SUPERUSER xbps-remove -R"
-#alias xbq="$SUPERUSER xbps-query"
-#alias xbqR="$SUPERUSER xbps-query -R"
+alias xbi="$SUPERUSER xbps-install -S"
+alias xbU="$SUPERUSER xbps-install -Su"
+alias xbr="$SUPERUSER xbps-remove"
+alias xbR="$SUPERUSER xbps-remove -R"
+alias xbq="$SUPERUSER xbps-query"
+alias xbqR="$SUPERUSER xbps-query -R"
 
 ## User Configs ##
 alias brc="$EDITOR ~/.bashrc"
