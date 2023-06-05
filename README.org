@@ -4,7 +4,7 @@
 #  _   _ / ___|  UmbralGoat [Vox]
 # | | | | |  _   https://www.github.com/VoxT1
 # | |_| | |_| |  https://www.twitter.com/umbralgoat
-#  \__,_|\____|  ψι#6283
+#  \__,_|\____|  Vox#6283
 
 This is my repository to store config files for whenever I may need them, and you are free to use them yourself!
 
